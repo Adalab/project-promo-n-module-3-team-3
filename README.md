@@ -9,7 +9,7 @@ We still have a long way to go but we are a fast learners.
 
 💞️ We are looking to collaborate on new projects in order to get to know more about the community and to keep on to practicing.
 
-📫 Feel free to contact us by [LinkedIn](https://www.linkedin.com/in/juditaldeguer/) [LinkedIn2](https://www.linkedin.com/in/m%C3%B3nica-lamas/) [LinkedIn3](https://www.linkedin.com/in/paloma-arevalo-gonzalez) [LinkedIn4](Maria) or you can also ask bout us through our learning center [Adalab](https://adalab.es/contacto/).
+📫 Feel free to contact us by [LinkedIn](https://www.linkedin.com/in/juditaldeguer/) [LinkedIn2](https://www.linkedin.com/in/m%C3%B3nica-lamas/) [LinkedIn3](https://www.linkedin.com/in/paloma-arevalo-gonzalez) [LinkedIn4](http://www.linkedin.com/in/maria-molina-garcia) or you can also ask bout us through our learning center [Adalab](https://adalab.es/contacto/).
 
 Looking forward to hear from you ✨
 Best regards,

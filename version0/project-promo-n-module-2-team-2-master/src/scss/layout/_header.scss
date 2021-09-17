@@ -1,0 +1,38 @@
+.header {
+  background-color: $whitefour;
+  width: 100%;
+
+  &_index {
+    height: 31vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media all and (min-width: 768px) {
+      height: 35vh;
+      align-items: flex-end;
+    }
+
+    .cards {
+      margin-top: 93px;
+      margin-bottom: 40px;
+      width: 250px;
+      height: 63px;
+      @media all and (min-width: 768px) {
+        width: 419px;
+        height: 105px;
+        margin: 0;
+      }
+    }
+  }
+  &_cards {
+    background-color: $whitetwo;
+    .cards {
+      margin-top: 31px;
+      margin-bottom: 30px;
+      margin-left: 40px;
+      width: 201px;
+      height: 50px;
+    }
+  }
+}

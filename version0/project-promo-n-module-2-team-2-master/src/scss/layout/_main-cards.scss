@@ -1,0 +1,196 @@
+.main_grid {
+  background: rgb(245, 245, 245);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(255, 255, 255, 1) 18%
+  );
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1 fr 1 fr;
+  }
+}
+
+.main__cards {
+  height: 475px;
+  background: rgb(221, 233, 237);
+  background: linear-gradient(
+    0deg,
+    rgba(221, 233, 237, 1) 0%,
+    rgba(191, 205, 208, 1) 100%
+  );
+  display: grid;
+  grid-template-columns: 1fr 240px 1fr;
+  justify-self: left;
+
+  @media (min-width: 768px) {
+    height: 95%;
+    width: 90%;
+    border-radius: 8px;
+    grid-column: 2 / 3;
+    grid-row: span 1 / 2;
+    margin: 23px 40px 21px auto;
+  }
+  @media (min-width: 1200px) {
+    border-radius: 8px;
+    margin-left: 0px;
+  }
+}
+
+.main__cards--button {
+  width: 75px;
+  height: 30px;
+  border-radius: 22px;
+  font-size: 12px;
+  font-family: $mainfont;
+  text-transform: uppercase;
+  color: $gunmetal;
+  background-color: $bluesilver;
+  border: solid 1px $whitetwo;
+  margin: auto auto 0px 0px;
+  grid-column: 2/3;
+}
+.main__cards--section {
+  //width: 240px;
+  height: 329px;
+  margin: 20px auto 40px auto;
+  background-color: $whitetwo;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+  display: grid;
+  grid-column: 2/3;
+  .grid-sidebar {
+    display: grid;
+    grid-template-columns: 5px 1fr;
+    grid-template-rows: 17px 20px 20px 6px;
+    row-gap: 4px;
+  }
+  .main__cards--section__sidebar {
+    background-color: $dirtyblue;
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .main__cards--section__title1 {
+    font-family: $montserrat;
+    font-size: 16px;
+    font-weight: 900;
+    color: $darkgreenblue;
+    text-transform: capitalize;
+    padding: 21px 14px 4px 15px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .main__cards--section__title2 {
+    font-family: $montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    color: $gunmetal;
+    padding: 0px 52px 10px 15px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .main__cards--section__img {
+    background-color: $dirtyblue;
+    width: 240px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #ccc;
+    background-image: url('../images/jabbascript-social.jpg');
+  }
+  .main__cards--section__links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+  .main__cards--section__links--item {
+    display: block;
+    text-decoration: none;
+    color: $darkgreenblue;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border: solid 2px $hospitalgreen;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 1.75;
+    margin: 5px;
+  }
+}
+
+.palette1 {
+  .main__cards--section__title1 {
+    color: $darkgreenblue;
+  }
+  .main__cards--section__sidebar {
+    background-color: $dirtyblue;
+  }
+  .js-icon {
+    color: $darkgreenblue;
+  }
+  .js-icon-circle {
+    border: solid 2px $hospitalgreen;
+  }
+}
+
+.palette2 {
+  .main__cards--section__title1 {
+    color: #420101;
+  }
+  .main__cards--section__sidebar {
+    background-color: #bd1010;
+  }
+  .js-icon {
+    color: #420101;
+  }
+  .js-icon-circle {
+    border: solid 2px #e95626;
+  }
+}
+
+.palette3 {
+  .main__cards--section__title1 {
+    color: #3e5b65;
+  }
+  .main__cards--section__sidebar {
+    background-color: #eab052;
+  }
+  .js-icon {
+    color: #3e5b65;
+  }
+  .js-icon-circle {
+    border: solid 2px #a2deaf;
+  }
+}
+.palette4 {
+  .main__cards--section__title1 {
+    color: #6d2c7d;
+  }
+  .main__cards--section__sidebar {
+    background-color: #ff40a0;
+  }
+  .js-icon {
+    color: #6d2c7d;
+  }
+  .js-icon-circle {
+    border: solid 2px #6b54ff;
+  }
+}
+.palette5 {
+  .main__cards--section__title1 {
+    color: #00a832;
+  }
+  .main__cards--section__sidebar {
+    background-color: #14ff30;
+  }
+  .js-icon {
+    color: #00a832;
+  }
+  .js-icon-circle {
+    border: solid 2px #8affad;
+  }
+}

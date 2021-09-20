@@ -5,7 +5,21 @@ import adalab from '../images/logo-adalab.png';
 import logo from '../images/logo-awesome-profile-cards.svg';
 
 function App() {
-  const [collapsable, setCollapsable] = useState('');
+  const [collapsable, setCollapsable] = useState(
+    'js_content div_content hidden'
+  );
+  //   Pendiente----------
+  const handlerCollapsable = (ev) => {
+    ev.preventDefault();
+    console.log(ev.currentTarget);
+    const currentTarget = ev.currentTarget;
+    if (currentTarget.id === '1') {
+      setCollapsable('js_content div_content hidden');
+    } else {
+      setCollapsable('js_content div_content');
+    }
+  };
+
   return (
     <div className="page">
       <header className="header_cards header">
@@ -86,13 +100,17 @@ function App() {
         <section className="section_form">
           <form action="#" className="form js_form">
             <fieldset>
-              <div className="section__title js_headerCollapsable">
+              <div
+                className="section__title js_headerCollapsable"
+                onClick={handlerCollapsable}
+                id="1"
+              >
                 <i className="far fa-object-ungroup"></i>
                 <h2 className="title">Diseña</h2>
                 <i className="fas fa-chevron-up arrow js_arrow"></i>
               </div>
 
-              <div className="js_content div_content">
+              <div className={collapsable}>
                 <label htmlFor="color_palette"> Colores </label>
                 <ul>
                   <li className="first_palette">
@@ -164,13 +182,16 @@ function App() {
               </div>
             </fieldset>
             <fieldset>
-              <div className="section__title js_headerCollapsable">
+              <div
+                className="section__title js_headerCollapsable"
+                onClick={handlerCollapsable}
+              >
                 <i className="far fa-keyboard"></i>
                 <h2 className="title">Rellena</h2>
                 <i className="fas fa-chevron-up arrow js_arrow"></i>
               </div>
 
-              <div className="js_content div_content">
+              <div className={collapsable}>
                 <label htmlFor="name" className="label">
                   Nombre completo
                   <span className="span">*</span>
@@ -263,13 +284,16 @@ function App() {
               </div>
             </fieldset>
             <fieldset>
-              <div className="section__title js_headerCollapsable">
+              <div
+                className="section__title js_headerCollapsable"
+                onClick={handlerCollapsable}
+              >
                 <i className="fas fa-share-alt"></i>
                 <h2 className="title">Comparte</h2>
                 <i className="fas fa-chevron-up arrow js_arrow"></i>
               </div>
 
-              <div className="js_content div_content">
+              <div className={collapsable}>
                 <button className="button__card js_button_share">
                   <i className="far fa-address-card"></i> Crear tarjeta
                 </button>

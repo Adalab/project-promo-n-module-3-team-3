@@ -9,7 +9,17 @@ function App() {
   const [collapsableFill, setCollapsableFill] = useState("hidden");
   const [collapsableShare, setCollapsableShare] = useState("hidden");
 
-  //   Pendiente----------
+  const [data, setData] = useState({
+    palette: 1,
+    name: "",
+    job: "",
+    image: "",
+    phone: "",
+    email: "",
+    linkedin: "",
+    github: "",
+  });
+
   const handlerCollapsableDesign = (ev) => {
     ev.preventDefault();
     if (collapsableDesign === "hidden") {
@@ -43,6 +53,42 @@ function App() {
     setCollapsableFill("hidden");
   };
 
+  const handleInput = (ev) => {
+    const currentInput = ev.currentTarget.name;
+
+    if (currentInput === "name") {
+      setData({
+        ...data,
+        name: ev.currentTarget.value,
+      });
+    } else if (currentInput === "job") {
+      setData({
+        ...data,
+        job: ev.currentTarget.value,
+      });
+    } else if (currentInput === "phone") {
+      setData({
+        ...data,
+        phone: ev.currentTarget.value,
+      });
+    } else if (currentInput === "email") {
+      setData({
+        ...data,
+        email: ev.currentTarget.value,
+      });
+    } else if (currentInput === "linkedin") {
+      setData({
+        ...data,
+        linkedin: ev.currentTarget.value,
+      });
+    } else if (currentInput === "github") {
+      setData({
+        ...data,
+        github: ev.currentTarget.value,
+      });
+    }
+  };
+
   return (
     <div className="page">
       <header className="header_cards header">
@@ -67,7 +113,7 @@ function App() {
             <div className="grid-sidebar">
               <div className="main__cards--section__sidebar"></div>
               <h1 className="main__cards--section__title1 js_previewtext js_title">
-                Nombre Apellido
+                {data.name === "" ? "Nombre Apellido" : data.name}
               </h1>
               <h2 className="main__cards--section__title2 js_previewtext js_job">
                 Front-end developer
@@ -144,6 +190,7 @@ function App() {
                       name="color_palette"
                       className="input_palette"
                       value="1"
+                      onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
                     <div className="colorTwo palette"></div>
@@ -157,6 +204,7 @@ function App() {
                       name="color_palette"
                       className="input_palette"
                       value="2"
+                      onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
                     <div className="colorTwo palette"></div>
@@ -170,6 +218,7 @@ function App() {
                       name="color_palette"
                       className="input_palette"
                       value="3"
+                      onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
                     <div className="colorTwo palette"></div>
@@ -183,6 +232,7 @@ function App() {
                       name="color_palette"
                       className="input_palette"
                       value="4"
+                      onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
                     <div className="colorTwo palette"></div>
@@ -196,6 +246,7 @@ function App() {
                       name="color_palette"
                       className="input_palette"
                       value="5"
+                      onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
                     <div className="colorTwo palette"></div>
@@ -225,8 +276,9 @@ function App() {
                   name="name"
                   id="name"
                   className="input js_inputtext"
-                  value=""
+                  value={data.name}
                   required
+                  onChange={handleInput}
                 />
                 <label htmlFor="work" className="label">
                   Puesto<span className="span">*</span>
@@ -237,7 +289,9 @@ function App() {
                   name="work"
                   id="job"
                   className="input js_inputtext"
+                  value={data.job === "" ? "Front-end developer" : data.job}
                   required
+                  onChange={handleInput}
                 />
                 <label htmlFor="image" className="label">
                   Imagen de perfil
@@ -263,11 +317,15 @@ function App() {
                 </label>
                 <input
                   type="email"
-                  placeholder="Ej. sally-hill@gmail.com "
+                  placeholder="Ej. sally-hill@gmail.com"
                   name="email"
                   id="email"
                   className="input js_input_link"
                   required
+                  value={
+                    data.email === "" ? "Ej. sally-hill@gmail.com" : data.email
+                  }
+                  onChange={handleInput}
                 />
                 <label htmlFor="phone" className="label">
                   Teléfono<span className="span">*</span>
@@ -280,6 +338,8 @@ function App() {
                   id="phone"
                   className="input js_input_link"
                   required
+                  value={data.phone === "" ? "555-555-555" : data.phone}
+                  onChange={handleInput}
                 />
                 <label htmlFor="linkedin" className="label">
                   Linkedin<span className="span">*</span>
@@ -291,18 +351,25 @@ function App() {
                   id="linkedin"
                   className="input js_input_link"
                   required
+                  value={
+                    data.linkedin === ""
+                      ? "linkedin.com/in/sally.hill"
+                      : data.linkedin
+                  }
+                  onChange={handleInput}
                 />
                 <label htmlFor="github" className="label">
                   Github<span className="span">*</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Ej: @sally-hill"
+                  placeholder="Ej: sally-hill"
                   name="github"
                   id="github"
                   className="input js_input_link"
-                  value=""
                   required
+                  value={data.github === "" ? "sally-hill" : data.github}
+                  onChange={handleInput}
                 />
               </div>
             </fieldset>

@@ -12,24 +12,35 @@ function App() {
   //   Pendiente----------
   const handlerCollapsableDesign = (ev) => {
     ev.preventDefault();
-
-    setCollapsableDesign("");
+    if (collapsableDesign === "hidden") {
+      setCollapsableDesign("");
+    } else {
+      setCollapsableDesign("hidden");
+    }
     setCollapsableFill("hidden");
     setCollapsableShare("hidden");
   };
 
   const handlerCollapsableFill = (ev) => {
     ev.preventDefault();
+    if (collapsableFill === "hidden") {
+      setCollapsableFill("");
+    } else {
+      setCollapsableFill("hidden");
+    }
     setCollapsableDesign("hidden");
-    setCollapsableFill("");
     setCollapsableShare("hidden");
   };
 
   const handlerCollapsableShare = (ev) => {
     ev.preventDefault();
+    if (collapsableShare === "hidden") {
+      setCollapsableShare("");
+    } else {
+      setCollapsableShare("hidden");
+    }
     setCollapsableDesign("hidden");
     setCollapsableFill("hidden");
-    setCollapsableShare("");
   };
 
   return (

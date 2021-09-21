@@ -1,23 +1,35 @@
 // Fichero src/components/App.js
-import { useState } from 'react';
-import '../styles/App.scss';
-import adalab from '../images/logo-adalab.png';
-import logo from '../images/logo-awesome-profile-cards.svg';
+import { useState } from "react";
+import "../styles/App.scss";
+import adalab from "../images/logo-adalab.png";
+import logo from "../images/logo-awesome-profile-cards.svg";
 
 function App() {
-  const [collapsable, setCollapsable] = useState(
-    'js_content div_content hidden'
-  );
+  const [collapsableDesign, setCollapsableDesign] = useState("hidden");
+  const [collapsableFill, setCollapsableFill] = useState("hidden");
+  const [collapsableShare, setCollapsableShare] = useState("hidden");
+
   //   Pendiente----------
-  const handlerCollapsable = (ev) => {
+  const handlerCollapsableDesign = (ev) => {
     ev.preventDefault();
-    console.log(ev.currentTarget);
-    const currentTarget = ev.currentTarget;
-    if (currentTarget.id === '1') {
-      setCollapsable('js_content div_content hidden');
-    } else {
-      setCollapsable('js_content div_content');
-    }
+
+    setCollapsableDesign("");
+    setCollapsableFill("hidden");
+    setCollapsableShare("hidden");
+  };
+
+  const handlerCollapsableFill = (ev) => {
+    ev.preventDefault();
+    setCollapsableDesign("hidden");
+    setCollapsableFill("");
+    setCollapsableShare("hidden");
+  };
+
+  const handlerCollapsableShare = (ev) => {
+    ev.preventDefault();
+    setCollapsableDesign("hidden");
+    setCollapsableFill("hidden");
+    setCollapsableShare("");
   };
 
   return (
@@ -102,7 +114,7 @@ function App() {
             <fieldset>
               <div
                 className="section__title js_headerCollapsable"
-                onClick={handlerCollapsable}
+                onClick={handlerCollapsableDesign}
                 id="1"
               >
                 <i className="far fa-object-ungroup"></i>
@@ -110,7 +122,7 @@ function App() {
                 <i className="fas fa-chevron-up arrow js_arrow"></i>
               </div>
 
-              <div className={collapsable}>
+              <div className={`js_content div_content ${collapsableDesign}`}>
                 <label htmlFor="color_palette"> Colores </label>
                 <ul>
                   <li className="first_palette">
@@ -184,14 +196,14 @@ function App() {
             <fieldset>
               <div
                 className="section__title js_headerCollapsable"
-                onClick={handlerCollapsable}
+                onClick={handlerCollapsableFill}
               >
                 <i className="far fa-keyboard"></i>
                 <h2 className="title">Rellena</h2>
                 <i className="fas fa-chevron-up arrow js_arrow"></i>
               </div>
 
-              <div className={collapsable}>
+              <div className={`js_content div_content ${collapsableFill}`}>
                 <label htmlFor="name" className="label">
                   Nombre completo
                   <span className="span">*</span>
@@ -286,14 +298,14 @@ function App() {
             <fieldset>
               <div
                 className="section__title js_headerCollapsable"
-                onClick={handlerCollapsable}
+                onClick={handlerCollapsableShare}
               >
                 <i className="fas fa-share-alt"></i>
                 <h2 className="title">Comparte</h2>
                 <i className="fas fa-chevron-up arrow js_arrow"></i>
               </div>
 
-              <div className={collapsable}>
+              <div className={`js_content div_content ${collapsableShare}`}>
                 <button className="button__card js_button_share">
                   <i className="far fa-address-card"></i> Crear tarjeta
                 </button>

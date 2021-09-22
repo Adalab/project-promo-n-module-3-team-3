@@ -1,104 +1,111 @@
 // Fichero src/components/App.js
-import { useState } from "react";
-import "../styles/App.scss";
-import adalab from "../images/logo-adalab.png";
-import logo from "../images/logo-awesome-profile-cards.svg";
+import { useState } from 'react';
+import '../styles/App.scss';
+import adalab from '../images/logo-adalab.png';
+import logo from '../images/logo-awesome-profile-cards.svg';
 
 function App() {
-  const [collapsableDesign, setCollapsableDesign] = useState("hidden");
-  const [collapsableFill, setCollapsableFill] = useState("hidden");
-  const [collapsableShare, setCollapsableShare] = useState("hidden");
-  const [arrow, setArrow] = useState('fas fa-chevron-down arrow js_arrow');
-  const [arrow2, setArrow2] = useState('fas fa-chevron-down arrow js_arrow');
-  const [arrow3, setArrow3] = useState('fas fa-chevron-down arrow js_arrow');
-  
+  const [collapsableDesign, setCollapsableDesign] = useState('hidden');
+  const [collapsableFill, setCollapsableFill] = useState('hidden');
+  const [collapsableShare, setCollapsableShare] = useState('hidden');
+  const [arrow , setArrow] = useState ('fas fa-chevron-down arrow js_arrow');
+  const [arrow2 , setArrow2] = useState ('fas fa-chevron-down arrow js_arrow');
+  const [arrow3 , setArrow3] = useState ('fas fa-chevron-down arrow js_arrow');
+
   const [data, setData] = useState({
     palette: 1,
-    name: "",
-    job: "",
-    image: "",
-    phone: "",
-    email: "",
-    linkedin: "",
-    github: "",
+    name: '',
+    job: '',
+    image: '',
+    phone: '',
+    email: '',
+    linkedin: '',
+    github: '',
   });
 
   const handlerCollapsableDesign = (ev) => {
     ev.preventDefault();
-    if (collapsableDesign === "hidden") {
-      setCollapsableDesign("");
-      setArrow('fas fa-chevron-up arrow js_arrow');
+    if (collapsableDesign === 'hidden') {
+      setCollapsableDesign('');
+      setArrow('fas fa-chevron-up arrow js_arrow')
     } else {
-      setCollapsableDesign("hidden");
-      setArrow('fas fa-chevron-down arrow js_arrow');
+      setCollapsableDesign('hidden');
+      setArrow('fas fa-chevron-down arrow js_arrow')
     }
-    setCollapsableFill("hidden");
-    setCollapsableShare("hidden");
-   
+    setCollapsableFill('hidden');
+    setCollapsableShare('hidden');
+    setArrow2('fas fa-chevron-down arrow js_arrow');
+    setArrow3('fas fa-chevron-down arrow js_arrow');
   };
 
   const handlerCollapsableFill = (ev) => {
     ev.preventDefault();
-    if (collapsableFill === "hidden") {
-      setCollapsableFill("");
-      setArrow2('fas fa-chevron-up arrow js_arrow');
+    if (collapsableFill === 'hidden') {
+      setCollapsableFill('');
+      setArrow2('fas fa-chevron-up arrow js_arrow')
     } else {
-      setCollapsableFill("hidden");
-      setArrow2('fas fa-chevron-down arrow js_arrow');
+      setCollapsableFill('hidden');
+      setArrow2('fas fa-chevron-down arrow js_arrow')
     }
-    setCollapsableDesign("hidden");
-    setCollapsableShare("hidden");
-    
+    setCollapsableDesign('hidden');
+    setCollapsableShare('hidden');
+    setArrow('fas fa-chevron-down arrow js_arrow');
+    setArrow3('fas fa-chevron-down arrow js_arrow');
   };
 
   const handlerCollapsableShare = (ev) => {
     ev.preventDefault();
-    if (collapsableShare === "hidden") {
-      setCollapsableShare("");
-      setArrow3('fas fa-chevron-up arrow js_arrow');
+    if (collapsableShare === 'hidden') {
+      setCollapsableShare('');
+      setArrow3('fas fa-chevron-up arrow js_arrow')
     } else {
-      setCollapsableShare("hidden");
-      setArrow3('fas fa-chevron-down arrow js_arrow');
+      setCollapsableShare('hidden');
+      setArrow3('fas fa-chevron-down arrow js_arrow')
     }
-    setCollapsableDesign("hidden");
-    setCollapsableFill("hidden");
-    
+    setCollapsableDesign('hidden');
+    setCollapsableFill('hidden');
+    setArrow('fas fa-chevron-down arrow js_arrow');
+    setArrow2('fas fa-chevron-down arrow js_arrow');
   };
 
   const handleInput = (ev) => {
     const currentInput = ev.currentTarget.name;
 
-    if (currentInput === "name") {
+    if (currentInput === 'name') {
       setData({
         ...data,
         name: ev.currentTarget.value,
       });
-    } else if (currentInput === "job") {
+    } else if (currentInput === 'job') {
       setData({
         ...data,
         job: ev.currentTarget.value,
       });
-    } else if (currentInput === "phone") {
+    } else if (currentInput === 'phone') {
       setData({
         ...data,
         phone: ev.currentTarget.value,
       });
-    } else if (currentInput === "email") {
+    } else if (currentInput === 'email') {
       setData({
         ...data,
         email: ev.currentTarget.value,
       });
-    } else if (currentInput === "linkedin") {
+    } else if (currentInput === 'linkedin') {
       setData({
         ...data,
         linkedin: ev.currentTarget.value,
       });
-    } else if (currentInput === "github") {
+    } else if (currentInput === 'github') {
       setData({
         ...data,
         github: ev.currentTarget.value,
       });
     }
+  };
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
   };
 
   return (
@@ -125,10 +132,10 @@ function App() {
             <div className="grid-sidebar">
               <div className="main__cards--section__sidebar"></div>
               <h1 className="main__cards--section__title1 js_previewtext js_title">
-                {data.name === "" ? "Nombre Apellido" : data.name}
+                {data.name === '' ? 'Nombre Apellido' : data.name}
               </h1>
               <h2 className="main__cards--section__title2 js_previewtext js_job">
-                {data.job === "" ? "Front-end developer" : data.job}
+                {data.job === '' ? 'Front-end developer' : data.job}
               </h2>
             </div>
             <div className="main__cards--section__img profile__image js__profile-image"></div>
@@ -139,7 +146,7 @@ function App() {
                     className="main__cards--section__links--item js-icon-circle"
                     id="mobile_link"
                     href={
-                      data.phone === "" ? "555-555-555" : `tel: ${data.phone}`
+                      data.phone === '' ? '555-555-555' : `tel: ${data.phone}`
                     }
                   >
                     <i className="fas fa-mobile-alt js-icon"></i>
@@ -151,8 +158,8 @@ function App() {
                     target="blank"
                     id="mail_link"
                     href={
-                      data.email === ""
-                        ? "sally-hill@gmail.com"
+                      data.email === ''
+                        ? 'sally-hill@gmail.com'
                         : `mailto: ${data.email}`
                     }
                   >
@@ -165,8 +172,8 @@ function App() {
                     id="linkedin_link"
                     target="blank"
                     href={
-                      data.linkedin === ""
-                        ? "linkedin.com/in/sally.hill"
+                      data.linkedin === ''
+                        ? 'linkedin.com/in/sally.hill'
                         : data.linkedin
                     }
                   >
@@ -179,8 +186,8 @@ function App() {
                     id="github_link"
                     target="blank"
                     href={
-                      data.github === ""
-                        ? "sally-hill"
+                      data.github === ''
+                        ? 'sally-hill'
                         : `https://github.com/ ${data.github}`
                     }
                   >
@@ -193,7 +200,7 @@ function App() {
         </section>
 
         <section className="section_form">
-          <form action="#" className="form js_form">
+          <form onSubmit={handleSubmit} action="#" className="form js_form">
             <fieldset>
               <div
                 className="section__title js_headerCollapsable"

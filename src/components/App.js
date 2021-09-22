@@ -61,7 +61,7 @@ function App() {
         ...data,
         name: ev.currentTarget.value,
       });
-    } else if (currentInput === 'job') {
+    } else if (currentInput === 'work') {
       setData({
         ...data,
         job: ev.currentTarget.value,

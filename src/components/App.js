@@ -8,7 +8,10 @@ function App() {
   const [collapsableDesign, setCollapsableDesign] = useState("hidden");
   const [collapsableFill, setCollapsableFill] = useState("hidden");
   const [collapsableShare, setCollapsableShare] = useState("hidden");
-
+  const [arrow, setArrow] = useState('fas fa-chevron-down arrow js_arrow');
+  const [arrow2, setArrow2] = useState('fas fa-chevron-down arrow js_arrow');
+  const [arrow3, setArrow3] = useState('fas fa-chevron-down arrow js_arrow');
+  
   const [data, setData] = useState({
     palette: 1,
     name: "",
@@ -24,33 +27,42 @@ function App() {
     ev.preventDefault();
     if (collapsableDesign === "hidden") {
       setCollapsableDesign("");
+      setArrow('fas fa-chevron-up arrow js_arrow');
     } else {
       setCollapsableDesign("hidden");
+      setArrow('fas fa-chevron-down arrow js_arrow');
     }
     setCollapsableFill("hidden");
     setCollapsableShare("hidden");
+   
   };
 
   const handlerCollapsableFill = (ev) => {
     ev.preventDefault();
     if (collapsableFill === "hidden") {
       setCollapsableFill("");
+      setArrow2('fas fa-chevron-up arrow js_arrow');
     } else {
       setCollapsableFill("hidden");
+      setArrow2('fas fa-chevron-down arrow js_arrow');
     }
     setCollapsableDesign("hidden");
     setCollapsableShare("hidden");
+    
   };
 
   const handlerCollapsableShare = (ev) => {
     ev.preventDefault();
     if (collapsableShare === "hidden") {
       setCollapsableShare("");
+      setArrow3('fas fa-chevron-up arrow js_arrow');
     } else {
       setCollapsableShare("hidden");
+      setArrow3('fas fa-chevron-down arrow js_arrow');
     }
     setCollapsableDesign("hidden");
     setCollapsableFill("hidden");
+    
   };
 
   const handleInput = (ev) => {
@@ -190,7 +202,7 @@ function App() {
               >
                 <i className="far fa-object-ungroup"></i>
                 <h2 className="title">Diseña</h2>
-                <i className="fas fa-chevron-up arrow js_arrow"></i>
+                <i className={arrow}></i>
               </div>
 
               <div className={`js_content div_content ${collapsableDesign}`}>
@@ -276,7 +288,7 @@ function App() {
               >
                 <i className="far fa-keyboard"></i>
                 <h2 className="title">Rellena</h2>
-                <i className="fas fa-chevron-up arrow js_arrow"></i>
+                <i className={arrow2}></i>
               </div>
 
               <div className={`js_content div_content ${collapsableFill}`}>
@@ -388,7 +400,7 @@ function App() {
               >
                 <i className="fas fa-share-alt"></i>
                 <h2 className="title">Comparte</h2>
-                <i className="fas fa-chevron-up arrow js_arrow"></i>
+                <i className={arrow3}></i>
               </div>
 
               <div className={`js_content div_content ${collapsableShare}`}>

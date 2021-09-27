@@ -31,10 +31,12 @@ function App() {
     } else {
       setCollapsableDesign('hidden');
       setArrow('fa-chevron-down')
+      setCollapsableFill('');
+      setArrow2('fa-chevron-up');
     }
-    setCollapsableFill('hidden');
+    
     setCollapsableShare('hidden');
-    setArrow2('fa-chevron-down');
+    
     setArrow3('fa-chevron-down');
   };
 
@@ -45,12 +47,14 @@ function App() {
       setArrow2('fa-chevron-up')
     } else {
       setCollapsableFill('hidden');
-      setArrow2('fa-chevron-down')
+      setArrow2('fa-chevron-down');
+      setCollapsableShare('');
+      setArrow3('fa-chevron-up');
     }
     setCollapsableDesign('hidden');
-    setCollapsableShare('hidden');
+    
     setArrow('fa-chevron-down');
-    setArrow3('fa-chevron-down');
+    
   };
 
   const handlerCollapsableShare = (ev) => {

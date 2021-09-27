@@ -3,8 +3,15 @@ import '../styles/components/tyles/core/_variables.scss';
 import '../styles/components/FormDesign.scss.scss';
 
 //function
-const FormDesign = (props) => {
-  //pending getting props from From compenent, who gets them from App.js --------------------
+const FormDesign = (prop) => {
+  const handlerCollapsableDesign = () => {
+    prop.handlerCollapsableDesign();
+  };
+
+  const handleInput = () => {
+    prop.handleInput();
+  };
+  //pending revisar todo OK --------------------
   return (
     <fieldset>
       <div
@@ -14,10 +21,10 @@ const FormDesign = (props) => {
       >
         <i className="far fa-object-ungroup"></i>
         <h2 className="title">Diseña</h2>
-        <i className={`fas ${arrow} arrow js_arrow`}></i>
+        <i className={`fas ${prop.arrow} arrow js_arrow`}></i>
       </div>
 
-      <div className={`js_content div_content ${collapsableDesign}`}>
+      <div className={`js_content div_content ${prop.collapsableDesign}`}>
         <label htmlFor="color_palette"> Colores </label>
         <ul>
           <li className="first_palette">

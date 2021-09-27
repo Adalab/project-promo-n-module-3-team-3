@@ -4,6 +4,7 @@ import '../styles/components/FormDesign.scss.scss';
 
 //function
 const FormDesign = (props) => {
+  //pending getting props from From compenent, who gets them from App.js --------------------
   return (
     <fieldset>
       <div

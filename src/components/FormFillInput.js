@@ -1,18 +1,28 @@
+import '../styles/layout/FormFillInput.scss';
 
+const FormFillInput =(props)=>{
 
-const FormFillInput =()=>{
+    const handleInput = (ev) => {
+        const currentInput = ev.currentTarget.name;
+    
+        if (currentInput === props.name) {
+          setData({
+            ...data,
+            name: ev.currentTarget.value,
+          });
+        } ;
 
     return (
-        <label htmlFor="name" className="label">
-                  Nombre completo
+        <label htmlFor={props.htmlFor} className="label">
+                 {props.text}
                   <span className="span">*</span>
                 <input
-                  type="text"
-                  placeholder="Ej. sally jill"
-                  name="name"
-                  id="name"
-                  className="input js_inputtext"
-                  value={data.name}
+                  type={props.type}
+                  placeholder={props.placeholder}
+                  name={props.name}
+                  id={props.id}
+                  className={props.className}
+                  value={props.value}
                   required
                   onChange={handleInput}
                 />

@@ -1,0 +1,17 @@
+.label {
+  padding-top: 13px;
+  font-size: 14px;
+  color: $darkgreenblue;
+  grid-column: span 2;
+  .span {
+    color: $dullorange;
+  }
+}
+.input {
+  padding: 10px;
+  border: solid 1px $hospitalgreen;
+  grid-column: span 2;
+  .input::placeholder {
+    font-family: $mainfont;
+  }
+}

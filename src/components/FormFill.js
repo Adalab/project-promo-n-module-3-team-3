@@ -1,8 +1,10 @@
+import '../styles/layout/FormFill.scss';
 import FormFillInput from './FormFillInput';
+
 
 const FormFill =()=>{
 
-    const handleInput = (ev) => {
+    /*const handleInput = (ev) => {
         const currentInput = ev.currentTarget.name;
     
         if (currentInput === 'name') {
@@ -36,7 +38,7 @@ const FormFill =()=>{
             github: ev.currentTarget.value,
           });
         }
-      };
+      }; */
 
     return (
         <fieldset>
@@ -51,33 +53,11 @@ const FormFill =()=>{
               </div>
 
               <div className={`js_content div_content ${collapsableFill}`}>
-                <label htmlFor="name" className="label">
-                  Nombre completo
-                  <span className="span">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Ej. sally jill"
-                  name="name"
-                  id="name"
-                  className="input js_inputtext"
-                  value={data.name}
-                  required
-                  onChange={handleInput}
-                />
-                <label htmlFor="work" className="label">
-                  Puesto<span className="span">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Ej. Front-end unicorn"
-                  name="work"
-                  id="job"
-                  className="input js_inputtext"
-                  value={data.job}
-                  required
-                  onChange={handleInput}
-                />
+
+               <FormFillInput  htmlFor="name" text="Nombre completo" type="text" placeholder="Ej. sally jill" name="name" id="name" className="input js_inputtext" value={data.name}/>
+
+                <FormFillInput  htmlFor="job" text="Puesto" type="text" placeholder="Ej. Front-end unicorn" name="job" id="job" className="input js_inputtext" value={data.job}/>
+
                 <label htmlFor="image" className="label">
                   Imagen de perfil
                   <span className="span">*</span>
@@ -94,62 +74,20 @@ const FormFill =()=>{
                     required
                   />
                 </div>
+
                 <div className="profile">
                   <div className="profile__preview js__profile-preview"></div>
                 </div>
-                <label htmlFor="email" className="label">
-                  Email<span className="span">*</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="Ej. sally-hill@gmail.com"
-                  name="email"
-                  id="email"
-                  className="input js_input_link"
-                  required
-                  value={data.email}
-                  onChange={handleInput}
-                />
-                <label htmlFor="phone" className="label">
-                  Teléfono<span className="span">*</span>
-                </label>
-                <input
-                  type="tel"
-                  placeholder="Ej: 555-55-55-55 "
-                  pattern="[6-7]{1}[0-9]{8}"
-                  name="phone"
-                  id="phone"
-                  className="input js_input_link"
-                  required
-                  value={data.phone}
-                  onChange={handleInput}
-                />
-                <label htmlFor="linkedin" className="label">
-                  Linkedin<span className="span">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Ej. linkedin.com/in/sally.hill"
-                  name="linkedin"
-                  id="linkedin"
-                  className="input js_input_link"
-                  required
-                  value={data.linkedin}
-                  onChange={handleInput}
-                />
-                <label htmlFor="github" className="label">
-                  Github<span className="span">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Ej: sally-hill"
-                  name="github"
-                  id="github"
-                  className="input js_input_link"
-                  required
-                  value={data.github}
-                  onChange={handleInput}
-                />
+
+                <FormFillInput  htmlFor="email" text="Email" type="email" placeholder="Ej. sally-hill@gmail.com" name="email" id="email" className="input js_input_link" value={data.email}/>
+                
+                <FormFillInput  htmlFor="phone" text="Teléfono" type="tel" placeholder="Ej: 555-55-55-55" name="phone" id="phone" className="input js_input_link" value={data.phone}/>
+
+                <FormFillInput  htmlFor="linkedin" text="Linkedin" type="text" placeholder="Ej. linkedin.com/in/sally.hill" name="linkedin" id="linkedin" className="input js_input_link" value={data.linkedin}/>
+               
+                <FormFillInput  htmlFor="github" text="Github" type="text" placeholder="Ej: sally-hill" name="github" id="github" className="input js_input_link" value={data.github}/>
+                
+                
               </div>
             </fieldset>
     )

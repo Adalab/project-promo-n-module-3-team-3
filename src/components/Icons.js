@@ -6,6 +6,7 @@ function Icons(props) {
       <a
         className="main__cards--section__links--item"
         id="mobile_link"
+        title="Llamar"
         href={props.phone === "" ? "555-555-555" : `tel: ${props.phone}`}
       >
         <i className="fas fa-mobile-alt"></i>

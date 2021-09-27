@@ -2,11 +2,15 @@ import "../styles/Variables.scss";
 import "../styles/Preview.scss";
 
 function Preview() {
+  const handleReset = (ev) => {
+    ev.preventDefault();
+  };
+
   return (
     <div className="page">
       <main className="main_grid">
         <section className="main__cards">
-          <button className="main__cards--button">
+          <button className="main__cards--button" onClick={handleReset}>
             <i className="far fa-trash-alt"></i> Reset
           </button>
           <section className="main__cards--section palette1">
@@ -27,6 +31,7 @@ function Preview() {
                   <a
                     className="main__cards--section__links--item"
                     id="mobile_link"
+                    title="Llamar"
                     href={
                       data.phone === "" ? "555-555-555" : `tel: ${data.phone}`
                     }
@@ -37,8 +42,9 @@ function Preview() {
                 <li>
                   <a
                     className="main__cards--section__links--item"
-                    target="blank"
+                    target="_blank"
                     id="mail_link"
+                    title="Escribir email"
                     href={
                       data.email === ""
                         ? "sally-hill@gmail.com"
@@ -52,7 +58,8 @@ function Preview() {
                   <a
                     className="main__cards--section__links--item"
                     id="linkedin_link"
-                    target="blank"
+                    target="_blank"
+                    title="LinkedIn"
                     href={
                       data.linkedin === ""
                         ? "linkedin.com/in/sally.hill"
@@ -66,7 +73,8 @@ function Preview() {
                   <a
                     className="main__cards--section__links--item"
                     id="github_link"
-                    target="blank"
+                    title="GitHub"
+                    target="_blank"
                     href={
                       data.github === ""
                         ? "sally-hill"

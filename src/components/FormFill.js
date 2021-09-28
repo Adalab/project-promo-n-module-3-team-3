@@ -2,40 +2,40 @@ import '../styles/layout/FormFill.scss';
 import FormFillInput from './FormFillInput';
 
 
-const FormFill =()=>{
+const FormFill =(props)=>{
 
-    /*const handleInput = (ev) => {
-        const currentInput = ev.currentTarget.name;
+    /*const handleInput = (targetName, targetValue) => {
+      
     
-        if (currentInput === 'name') {
+        if (targetName === 'name') {
           setData({
             ...data,
-            name: ev.currentTarget.value,
+            name: targetValue,
           });
-        } else if (currentInput === 'job') {
+        } else if (targetName === 'job') {
           setData({
             ...data,
-            job: ev.currentTarget.value,
+            job: targetValue,
           });
-        } else if (currentInput === 'phone') {
+        } else if (targetName === 'phone') {
           setData({
             ...data,
-            phone: ev.currentTarget.value,
+            phone: targetValue,
           });
-        } else if (currentInput === 'email') {
+        } else if (targetName === 'email') {
           setData({
             ...data,
-            email: ev.currentTarget.value,
+            email: targetValue,
           });
-        } else if (currentInput === 'linkedin') {
+        } else if (targetName === 'linkedin') {
           setData({
             ...data,
-            linkedin: ev.currentTarget.value,
+            linkedin: targetValue,
           });
-        } else if (currentInput === 'github') {
+        } else if (targetName === 'github') {
           setData({
             ...data,
-            github: ev.currentTarget.value,
+            github: targetValue,
           });
         }
       }; */
@@ -54,9 +54,9 @@ const FormFill =()=>{
 
               <div className={`js_content div_content ${collapsableFill}`}>
 
-               <FormFillInput  htmlFor="name" text="Nombre completo" type="text" placeholder="Ej. sally jill" name="name" id="name" className="input js_inputtext" value={data.name}/>
+               <FormFillInput  htmlFor="name" text="Nombre completo" type="text" placeholder="Ej. sally jill" name="name" id="name" className="input js_inputtext" value={data.name} handleInput={props.handleInput}/>
 
-                <FormFillInput  htmlFor="job" text="Puesto" type="text" placeholder="Ej. Front-end unicorn" name="job" id="job" className="input js_inputtext" value={data.job}/>
+                <FormFillInput  htmlFor="job" text="Puesto" type="text" placeholder="Ej. Front-end unicorn" name="job" id="job" className="input js_inputtext" value={data.job} handleInput={props.handleInput}/>
 
                 <label htmlFor="image" className="label">
                   Imagen de perfil
@@ -79,13 +79,13 @@ const FormFill =()=>{
                   <div className="profile__preview js__profile-preview"></div>
                 </div>
 
-                <FormFillInput  htmlFor="email" text="Email" type="email" placeholder="Ej. sally-hill@gmail.com" name="email" id="email" className="input js_input_link" value={data.email} handleInput={handleInput}/>
+                <FormFillInput  htmlFor="email" text="Email" type="email" placeholder="Ej. sally-hill@gmail.com" name="email" id="email" className="input js_input_link" value={data.email} handleInput={props.handleInput}/>
                 
-                <FormFillInput  htmlFor="phone" text="Teléfono" type="tel" placeholder="Ej: 555-55-55-55" name="phone" id="phone" className="input js_input_link" value={data.phone} handleInput={handleInput}/>
+                <FormFillInput  htmlFor="phone" text="Teléfono" type="tel" placeholder="Ej: 555-55-55-55" name="phone" id="phone" className="input js_input_link" value={data.phone} handleInput={props.handleInput}/>
 
-                <FormFillInput  htmlFor="linkedin" text="Linkedin" type="text" placeholder="Ej. linkedin.com/in/sally.hill" name="linkedin" id="linkedin" className="input js_input_link" value={data.linkedin} handleInput={handleInput}/>
+                <FormFillInput  htmlFor="linkedin" text="Linkedin" type="text" placeholder="Ej. linkedin.com/in/sally.hill" name="linkedin" id="linkedin" className="input js_input_link" value={data.linkedin} handleInput={props.handleInput}/>
                
-                <FormFillInput  htmlFor="github" text="Github" type="text" placeholder="Ej: sally-hill" name="github" id="github" className="input js_input_link" value={data.github} handleInput={handleInput}/>
+                <FormFillInput  htmlFor="github" text="Github" type="text" placeholder="Ej: sally-hill" name="github" id="github" className="input js_input_link" value={data.github} handleInput={props.handleInput}/>
                 
                 
               </div>

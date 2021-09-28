@@ -3,7 +3,7 @@ import '../styles/layout/FormFillInput.scss';
 const FormFillInput =(props)=>{
 
     const handleChange = (ev) => {
-       return props.handleInput(ev.target.value);
+       return props.handleInput(ev.currentTarget.name, ev.currentTarget.value);
     
     }
 

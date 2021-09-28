@@ -323,7 +323,7 @@ function App() {
                 <input
                   type="text"
                   placeholder="Ej. Front-end unicorn"
-                  name="work"
+                  name="job"
                   id="job"
                   className="input js_inputtext"
                   value={data.job}

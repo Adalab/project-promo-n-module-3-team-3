@@ -2,20 +2,15 @@ import '../styles/layout/FormFillInput.scss';
 
 const FormFillInput =(props)=>{
 
-    const handleInput = (ev) => {
-        const currentInput = ev.currentTarget.name;
+    const handleChange = (ev) => {
+       return props.handleInput(ev.target.value);
     
-        if (currentInput === props.name) {
-          setData({
-            ...data,
-            name: ev.currentTarget.value,
-          });
-        } ;
+    }
 
     return (
-        <label htmlFor={props.htmlFor} className="label">
+       <> <label htmlFor={props.htmlFor} className="label">
                  {props.text}
-                  <span className="span">*</span>
+                  <span className="span">*</span></label>
                 <input
                   type={props.type}
                   placeholder={props.placeholder}
@@ -24,12 +19,10 @@ const FormFillInput =(props)=>{
                   className={props.className}
                   value={props.value}
                   required
-                  onChange={handleInput}
+                  onChange={handleChange}
                 />
                 
-        </label>
-                
-
+        </>
     )
 }
 

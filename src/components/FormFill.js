@@ -79,13 +79,13 @@ const FormFill =()=>{
                   <div className="profile__preview js__profile-preview"></div>
                 </div>
 
-                <FormFillInput  htmlFor="email" text="Email" type="email" placeholder="Ej. sally-hill@gmail.com" name="email" id="email" className="input js_input_link" value={data.email}/>
+                <FormFillInput  htmlFor="email" text="Email" type="email" placeholder="Ej. sally-hill@gmail.com" name="email" id="email" className="input js_input_link" value={data.email} handleInput={handleInput}/>
                 
-                <FormFillInput  htmlFor="phone" text="Teléfono" type="tel" placeholder="Ej: 555-55-55-55" name="phone" id="phone" className="input js_input_link" value={data.phone}/>
+                <FormFillInput  htmlFor="phone" text="Teléfono" type="tel" placeholder="Ej: 555-55-55-55" name="phone" id="phone" className="input js_input_link" value={data.phone} handleInput={handleInput}/>
 
-                <FormFillInput  htmlFor="linkedin" text="Linkedin" type="text" placeholder="Ej. linkedin.com/in/sally.hill" name="linkedin" id="linkedin" className="input js_input_link" value={data.linkedin}/>
+                <FormFillInput  htmlFor="linkedin" text="Linkedin" type="text" placeholder="Ej. linkedin.com/in/sally.hill" name="linkedin" id="linkedin" className="input js_input_link" value={data.linkedin} handleInput={handleInput}/>
                
-                <FormFillInput  htmlFor="github" text="Github" type="text" placeholder="Ej: sally-hill" name="github" id="github" className="input js_input_link" value={data.github}/>
+                <FormFillInput  htmlFor="github" text="Github" type="text" placeholder="Ej: sally-hill" name="github" id="github" className="input js_input_link" value={data.github} handleInput={handleInput}/>
                 
                 
               </div>

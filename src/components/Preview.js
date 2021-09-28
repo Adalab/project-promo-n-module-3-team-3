@@ -1,5 +1,5 @@
-import "../styles/Variables.scss";
-import "../styles/Preview.scss";
+
+import "../styles/components/preview.scss";
 
 function Preview() {
   return (

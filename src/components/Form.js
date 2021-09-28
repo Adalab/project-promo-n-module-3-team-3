@@ -1,4 +1,4 @@
-import FormDesign from './FormDesig';
+import FormDesign from './formDesig';
 
 const Form = (prop) => {
   //pendiente coger los props de App.js

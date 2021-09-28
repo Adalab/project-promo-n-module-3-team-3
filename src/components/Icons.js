@@ -1,4 +1,4 @@
-import "../styles/Preview.scss";
+import "../styles/components/preview.scss";
 
 function Icons(props) {
   return (

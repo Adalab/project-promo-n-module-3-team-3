@@ -1,4 +1,4 @@
-import '../styles/layout/FormFill.scss';
+import '../styles/components/formFill.scss';
 import FormFillInput from './FormFillInput';
 
 

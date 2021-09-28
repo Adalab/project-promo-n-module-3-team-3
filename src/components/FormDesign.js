@@ -1,6 +1,6 @@
 //imports
-import '../styles/components/tyles/core/_variables.scss';
-import '../styles/components/FormDesign.scss.scss';
+
+import '../styles/components/formDesign.scss.scss';
 
 //function
 const FormDesign = (prop) => {

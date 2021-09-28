@@ -1,4 +1,4 @@
-import '../styles/layout/FormFillInput.scss';
+import '../styles/components/formFillInput.scss';
 
 const FormFillInput =(props)=>{
 

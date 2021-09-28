@@ -1,6 +1,6 @@
 // Fichero src/components/App.js
 import { useState } from 'react';
-import '../styles/App.scss';
+import '../styles/app.scss';
 import adalab from '../images/logo-adalab.png';
 import logo from '../images/logo-awesome-profile-cards.svg';
 

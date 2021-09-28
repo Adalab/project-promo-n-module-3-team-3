@@ -11,6 +11,47 @@ const FormDesign = (prop) => {
   const handleInput = () => {
     prop.handleInput();
   };
+
+  // const handleInput = (ev) => {
+  //   const currentInput = ev.currentTarget.name;
+  //   if (currentInput === 'name') {
+  //     setData({
+  //       ...data,
+  //       name: ev.currentTarget.value,
+  //     });
+  //   } else if (currentInput === 'job') {
+  //     setData({
+  //       ...data,
+  //       job: ev.currentTarget.value,
+  //     });
+  //   } else if (currentInput === 'phone') {
+  //     setData({
+  //       ...data,
+  //       phone: ev.currentTarget.value,
+  //     });
+  //   } else if (currentInput === 'email') {
+  //     setData({
+  //       ...data,
+  //       email: ev.currentTarget.value,
+  //     });
+  //   } else if (currentInput === 'linkedin') {
+  //     setData({
+  //       ...data,
+  //       linkedin: ev.currentTarget.value,
+  //     });
+  //   } else if (currentInput === 'github') {
+  //     setData({
+  //       ...data,
+  //       github: ev.currentTarget.value,
+  //     });
+  //   } else if (currentInput === 'color_palette') {
+  //     setData({
+  //       ...data,
+  //       palette: ev.currentTarget.value,
+  //     });
+  //   }
+  // };
+
   //pending revisar todo OK --------------------
   return (
     <fieldset>
@@ -34,7 +75,7 @@ const FormDesign = (prop) => {
               type="radio"
               name="color_palette"
               className="input_palette"
-              value="1"
+              value="palette1"
               onChange={handleInput}
             />
             <div className="colorOne palette"></div>
@@ -48,7 +89,7 @@ const FormDesign = (prop) => {
               type="radio"
               name="color_palette"
               className="input_palette"
-              value="2"
+              value="palette2"
               onChange={handleInput}
             />
             <div className="colorOne palette"></div>
@@ -62,7 +103,7 @@ const FormDesign = (prop) => {
               type="radio"
               name="color_palette"
               className="input_palette"
-              value="3"
+              value="palette3"
               onChange={handleInput}
             />
             <div className="colorOne palette"></div>
@@ -76,7 +117,7 @@ const FormDesign = (prop) => {
               type="radio"
               name="color_palette"
               className="input_palette"
-              value="4"
+              value="palette4"
               onChange={handleInput}
             />
             <div className="colorOne palette"></div>
@@ -90,7 +131,7 @@ const FormDesign = (prop) => {
               type="radio"
               name="color_palette"
               className="input_palette"
-              value="5"
+              value="palette5"
               onChange={handleInput}
             />
             <div className="colorOne palette"></div>

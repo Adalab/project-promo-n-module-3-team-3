@@ -8,12 +8,12 @@ function App() {
   const [collapsableDesign, setCollapsableDesign] = useState('hidden');
   const [collapsableFill, setCollapsableFill] = useState('hidden');
   const [collapsableShare, setCollapsableShare] = useState('hidden');
-  const [arrow , setArrow] = useState ('fa-chevron-down');
-  const [arrow2 , setArrow2] = useState ('fa-chevron-down');
-  const [arrow3 , setArrow3] = useState ('fa-chevron-down');
+  const [arrow, setArrow] = useState('fa-chevron-down');
+  const [arrow2, setArrow2] = useState('fa-chevron-down');
+  const [arrow3, setArrow3] = useState('fa-chevron-down');
 
   const [data, setData] = useState({
-    palette: 1,
+    palette: 'palette1',
     name: '',
     job: '',
     image: '',
@@ -27,16 +27,16 @@ function App() {
     ev.preventDefault();
     if (collapsableDesign === 'hidden') {
       setCollapsableDesign('');
-      setArrow('fa-chevron-up')
+      setArrow('fa-chevron-up');
     } else {
       setCollapsableDesign('hidden');
-      setArrow('fa-chevron-down')
+      setArrow('fa-chevron-down');
       setCollapsableFill('');
       setArrow2('fa-chevron-up');
     }
-    
+
     setCollapsableShare('hidden');
-    
+
     setArrow3('fa-chevron-down');
   };
 
@@ -44,7 +44,7 @@ function App() {
     ev.preventDefault();
     if (collapsableFill === 'hidden') {
       setCollapsableFill('');
-      setArrow2('fa-chevron-up')
+      setArrow2('fa-chevron-up');
     } else {
       setCollapsableFill('hidden');
       setArrow2('fa-chevron-down');
@@ -52,19 +52,18 @@ function App() {
       setArrow3('fa-chevron-up');
     }
     setCollapsableDesign('hidden');
-    
+
     setArrow('fa-chevron-down');
-    
   };
 
   const handlerCollapsableShare = (ev) => {
     ev.preventDefault();
     if (collapsableShare === 'hidden') {
       setCollapsableShare('');
-      setArrow3('fa-chevron-up')
+      setArrow3('fa-chevron-up');
     } else {
       setCollapsableShare('hidden');
-      setArrow3('fa-chevron-down')
+      setArrow3('fa-chevron-down');
     }
     setCollapsableDesign('hidden');
     setCollapsableFill('hidden');
@@ -74,7 +73,6 @@ function App() {
 
   const handleInput = (ev) => {
     const currentInput = ev.currentTarget.name;
-
     if (currentInput === 'name') {
       setData({
         ...data,
@@ -105,6 +103,11 @@ function App() {
         ...data,
         github: ev.currentTarget.value,
       });
+    } else if (currentInput === 'color_palette') {
+      setData({
+        ...data,
+        palette: ev.currentTarget.value,
+      });
     }
   };
 
@@ -132,7 +135,9 @@ function App() {
           <button className="main__cards--button js_resetbutton">
             <i className="far fa-trash-alt"></i> Reset
           </button>
-          <section className="main__cards--section js-preview palette5">
+          <section
+            className={`main__cards--section js-preview ${data.palette}`}
+          >
             <div className="grid-sidebar">
               <div className="main__cards--section__sidebar"></div>
               <h1 className="main__cards--section__title1 js_previewtext js_title">
@@ -222,11 +227,11 @@ function App() {
                   <li className="first_palette">
                     <input
                       defaultChecked
-                      id="palette"
+                      id="palette1"
                       type="radio"
                       name="color_palette"
                       className="input_palette"
-                      value="1"
+                      value="palette1"
                       onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
@@ -236,11 +241,11 @@ function App() {
 
                   <li className="second_palette">
                     <input
-                      id="palette"
+                      id="palette2"
                       type="radio"
                       name="color_palette"
                       className="input_palette"
-                      value="2"
+                      value="palette2"
                       onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
@@ -250,11 +255,11 @@ function App() {
 
                   <li className="third_palette">
                     <input
-                      id="palette"
+                      id="palette3"
                       type="radio"
                       name="color_palette"
                       className="input_palette"
-                      value="3"
+                      value="palette3"
                       onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
@@ -264,11 +269,11 @@ function App() {
 
                   <li className="fourth_palette">
                     <input
-                      id="palette"
+                      id="palette4"
                       type="radio"
                       name="color_palette"
                       className="input_palette"
-                      value="4"
+                      value="palette4"
                       onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>
@@ -278,11 +283,11 @@ function App() {
 
                   <li className="fifth_palette">
                     <input
-                      id="palette"
+                      id="palette5"
                       type="radio"
                       name="color_palette"
                       className="input_palette"
-                      value="5"
+                      value="palette5"
                       onChange={handleInput}
                     />
                     <div className="colorOne palette"></div>

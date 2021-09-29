@@ -7,9 +7,13 @@ function Icons(props) {
         className="main__cards--section__links--item"
         id={props.id}
         title={props.title}
-        href={props.phone === "" ? "555-555-555" : `tel: ${props.phone}`}
+        href={
+          props.text === "" ? props.placeHolder : `${props.goTo} ${props.text}`
+        }
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <i className="fas fa-mobile-alt"></i>
+        <i className={props.iconClass}></i>
       </a>
     </li>
   );

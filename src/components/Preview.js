@@ -28,65 +28,38 @@ function Preview() {
             <div className="main__cards--section__img profile__image"></div>
             <nav>
               <ul className="main__cards--section__links">
-                {/* <Icons /> */}
-                <li>
-                  <Icons className="main__cards--section__links--item" />
-                  <a
-                    className="main__cards--section__links--item"
-                    id="mobile_link"
-                    title="Llamar"
-                    href={
-                      data.phone === "" ? "555-555-555" : `tel: ${data.phone}`
-                    }
-                  >
-                    <i className="fas fa-mobile-alt"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="main__cards--section__links--item"
-                    target="_blank"
-                    id="mail_link"
-                    title="Escribir email"
-                    href={
-                      data.email === ""
-                        ? "sally-hill@gmail.com"
-                        : `mailto: ${data.email}`
-                    }
-                  >
-                    <i className="far fa-envelope"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="main__cards--section__links--item"
-                    id="linkedin_link"
-                    target="_blank"
-                    title="LinkedIn"
-                    href={
-                      data.linkedin === ""
-                        ? "linkedin.com/in/sally.hill"
-                        : data.linkedin
-                    }
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="main__cards--section__links--item"
-                    id="github_link"
-                    title="GitHub"
-                    target="_blank"
-                    href={
-                      data.github === ""
-                        ? "sally-hill"
-                        : `https://github.com/ ${data.github}`
-                    }
-                  >
-                    <i className="fab fa-github-alt"></i>
-                  </a>
-                </li>
+                <Icons
+                  id="mobile_link"
+                  title="Llamar"
+                  text={props.phone}
+                  placeHolder="555-555-555"
+                  goTo="tel:"
+                  iconClass="fas fa-mobile-alt"
+                />
+                <Icons
+                  id="mail_link"
+                  title="Escribir email"
+                  text={props.email}
+                  placeHolder="sally-hill@gmail.com"
+                  goTo="mailto:"
+                  iconClass="far fa-envelope"
+                />
+                <Icons
+                  id="linkedin_link"
+                  title="LinkedIn"
+                  text={props.linkedin}
+                  placeHolder="sally.hill"
+                  goTo={`https://www.linkedin.com/in/${props.linkedin}`}
+                  iconClass="fab fa-linkedin-in"
+                />
+                <Icons
+                  id="github_link"
+                  title="GitHub"
+                  text={props.github}
+                  placeHolder="sally.hill"
+                  goTo={`https://github.com/ ${props.github}`}
+                  iconClass="fab fa-github-alt"
+                />
               </ul>
             </nav>
           </section>

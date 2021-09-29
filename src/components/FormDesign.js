@@ -1,6 +1,5 @@
 //imports
-
-import '../styles/components/formDesign.scss.scss';
+import '../styles/components/formDesign.scss';
 
 //function
 const FormDesign = (prop) => {

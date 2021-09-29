@@ -30,6 +30,7 @@ function Preview() {
               <ul className="main__cards--section__links">
                 {/* <Icons /> */}
                 <li>
+                  <Icons className="main__cards--section__links--item" />
                   <a
                     className="main__cards--section__links--item"
                     id="mobile_link"

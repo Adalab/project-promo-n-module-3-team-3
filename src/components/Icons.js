@@ -5,8 +5,8 @@ function Icons(props) {
     <li>
       <a
         className="main__cards--section__links--item"
-        id="mobile_link"
-        title="Llamar"
+        id={props.id}
+        title={props.title}
         href={props.phone === "" ? "555-555-555" : `tel: ${props.phone}`}
       >
         <i className="fas fa-mobile-alt"></i>

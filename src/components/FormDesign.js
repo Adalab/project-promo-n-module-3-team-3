@@ -1,68 +1,23 @@
 //imports
 import '../styles/components/formDesign.scss';
+import Collapsable from './Collapsable';
 
 //function
 const FormDesign = (prop) => {
-  const handlerCollapsableDesign = () => {
-    prop.handlerCollapsableDesign();
-  };
-
+  
   const handleInput = () => {
     prop.handleInput();
   };
 
-  // const handleInput = (ev) => {
-  //   const currentInput = ev.currentTarget.name;
-  //   if (currentInput === 'name') {
-  //     setData({
-  //       ...data,
-  //       name: ev.currentTarget.value,
-  //     });
-  //   } else if (currentInput === 'job') {
-  //     setData({
-  //       ...data,
-  //       job: ev.currentTarget.value,
-  //     });
-  //   } else if (currentInput === 'phone') {
-  //     setData({
-  //       ...data,
-  //       phone: ev.currentTarget.value,
-  //     });
-  //   } else if (currentInput === 'email') {
-  //     setData({
-  //       ...data,
-  //       email: ev.currentTarget.value,
-  //     });
-  //   } else if (currentInput === 'linkedin') {
-  //     setData({
-  //       ...data,
-  //       linkedin: ev.currentTarget.value,
-  //     });
-  //   } else if (currentInput === 'github') {
-  //     setData({
-  //       ...data,
-  //       github: ev.currentTarget.value,
-  //     });
-  //   } else if (currentInput === 'color_palette') {
-  //     setData({
-  //       ...data,
-  //       palette: ev.currentTarget.value,
-  //     });
-  //   }
-  // };
+  
 
   //pending revisar todo OK --------------------
   return (
     <fieldset>
-      <div
-        className="section__title js_headerCollapsable"
-        onClick={handlerCollapsableDesign}
-        id="1"
-      >
-        <i className="far fa-object-ungroup"></i>
-        <h2 className="title">Diseña</h2>
-        <i className={`fas ${prop.arrow} arrow js_arrow`}></i>
-      </div>
+      <Collapsable className="far fa-object-ungroup" text="Diseña" handlerCollapsableDesign={prop.handlerCollapsableDesign}
+          arrow={prop.arrow}
+          collapsableDesign={prop.collapsableDesign}/>
+      
 
       <div className={`js_content div_content ${prop.collapsableDesign}`}>
         <label htmlFor="color_palette"> Colores </label>

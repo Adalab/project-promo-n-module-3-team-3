@@ -1,4 +1,4 @@
-@import '../core/variables';
+@import "../core/variables";
 
 .section__title {
   display: flex;
@@ -63,7 +63,4 @@
   border: solid 1px $hospitalgreen;
   grid-column: 2 / 3;
   grid-row: span 2;
-}
-.form .hidden {
-  display: none;
 }

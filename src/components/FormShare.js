@@ -1,17 +1,18 @@
 import '../styles/components/formShare.scss';
+import Collapsable from './Collapsable';
 
 const FormShare = (props) => {
+  
+
+  
   return (
     <>
       <fieldset>
-        <div
-          className="section__title js_headerCollapsable"
-          onClick={props.handlerCollapsableShare}
-        >
-          <i className="fas fa-share-alt"></i>
-          <h2 className="title">Comparte</h2>
-          <i className={`fas ${props.arrow3} arrow js_arrow`}></i>
-        </div>
+      <Collapsable className="fas fa-share-alt" text="Comparte"
+      handlerCollapsableShare={props.handlerCollapsableShare}
+      arrow3={props.arrow3}
+      collapsableShare={props.collapsableShare}/>
+        
 
         <div className={`js_content div_content ${props.collapsableShare}`}>
           <button className="button__card js_button_share">

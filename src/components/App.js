@@ -3,7 +3,6 @@ import { useState } from 'react';
 import '../styles/App.scss';
 import adalab from '../images/logo-adalab.png';
 import logo from '../images/logo-awesome-profile-cards.svg';
-import FormShare from './FormShare';
 
 function App() {
 	const [collapsableDesign, setCollapsableDesign] = useState('hidden');
@@ -14,7 +13,7 @@ function App() {
 	const [arrow3, setArrow3] = useState('fa-chevron-down');
 
 	const [data, setData] = useState({
-		palette: 1,
+		palette: 'palette1',
 		name: '',
 		job: '',
 		image: '',
@@ -74,7 +73,6 @@ function App() {
 
 	const handleInput = (ev) => {
 		const currentInput = ev.currentTarget.name;
-
 		if (currentInput === 'name') {
 			setData({
 				...data,
@@ -105,6 +103,11 @@ function App() {
 				...data,
 				github: ev.currentTarget.value,
 			});
+		} else if (currentInput === 'color_palette') {
+			setData({
+				...data,
+				palette: ev.currentTarget.value,
+			});
 		}
 	};
 
@@ -132,7 +135,8 @@ function App() {
 					<button className="main__cards--button js_resetbutton">
 						<i className="far fa-trash-alt"></i> Reset
 					</button>
-					<section className="main__cards--section js-preview palette5">
+					<section
+						className={`main__cards--section js-preview ${data.palette}`}>
 						<div className="grid-sidebar">
 							<div className="main__cards--section__sidebar"></div>
 							<h1 className="main__cards--section__title1 js_previewtext js_title">
@@ -228,11 +232,11 @@ function App() {
 									<li className="first_palette">
 										<input
 											defaultChecked
-											id="palette"
+											id="palette1"
 											type="radio"
 											name="color_palette"
 											className="input_palette"
-											value="1"
+											value="palette1"
 											onChange={handleInput}
 										/>
 										<div className="colorOne palette"></div>
@@ -242,11 +246,11 @@ function App() {
 
 									<li className="second_palette">
 										<input
-											id="palette"
+											id="palette2"
 											type="radio"
 											name="color_palette"
 											className="input_palette"
-											value="2"
+											value="palette2"
 											onChange={handleInput}
 										/>
 										<div className="colorOne palette"></div>
@@ -256,11 +260,11 @@ function App() {
 
 									<li className="third_palette">
 										<input
-											id="palette"
+											id="palette3"
 											type="radio"
 											name="color_palette"
 											className="input_palette"
-											value="3"
+											value="palette3"
 											onChange={handleInput}
 										/>
 										<div className="colorOne palette"></div>
@@ -270,11 +274,11 @@ function App() {
 
 									<li className="fourth_palette">
 										<input
-											id="palette"
+											id="palette4"
 											type="radio"
 											name="color_palette"
 											className="input_palette"
-											value="4"
+											value="palette4"
 											onChange={handleInput}
 										/>
 										<div className="colorOne palette"></div>
@@ -284,11 +288,11 @@ function App() {
 
 									<li className="fifth_palette">
 										<input
-											id="palette"
+											id="palette5"
 											type="radio"
 											name="color_palette"
 											className="input_palette"
-											value="5"
+											value="palette5"
 											onChange={handleInput}
 										/>
 										<div className="colorOne palette"></div>
@@ -330,7 +334,7 @@ function App() {
 								<input
 									type="text"
 									placeholder="Ej. Front-end unicorn"
-									name="work"
+									name="job"
 									id="job"
 									className="input js_inputtext"
 									value={data.job}
@@ -426,49 +430,46 @@ function App() {
 							<div
 								className={`js_content div_content ${collapsableShare}`}>
 								<button className="button__card js_button_share">
-									<i className="far fa-address-card"></i>{' '}
+									<i className="far fa-address-card"></i>
 									Crear tarjeta
 								</button>
 							</div>
 						</fieldset>
 					</form>
-					{/*           <section className="share__section  js_share_twitter">
-            <h2 className="share__section--title js_sharetitle"></h2>
-            <a
-              className="share__section--link js_parrafo_share"
-              target="blank"
-            ></a>
-            <h3 className="titlecompartir">Compartir</h3>
-            <div className="section_buttons">
-              <button className="share__section--button">
-                <a
-                  className="js_linktwitter linktwitter"
-                  target="blank"
-                  href="https://twitter.com/"
-                >
-                  <i className="fab fa-twitter"></i> Twitter
-                </a>
-              </button>
-              <button className="share__section--button">
-                <a
-                  className="js_linkFacebook linktwitter"
-                  target="blank"
-                  href="https://es-es.facebook.com/"
-                >
-                  <i className="fab fa-facebook"></i> Facebook
-                </a>
-              </button>
-              <button className="share__section--button">
-                <a
-                  className="js_linkLinkedin linktwitter"
-                  target="blank"
-                  href="https://www.linkedin.com/in/"
-                >
-                  <i className="fab fa-linkedin-in js-icon"></i> Linkedin
-                </a>
-              </button>
-            </div>
-          </section> */}
+					<section className="share__section  js_share_twitter">
+						<h2 className="share__section--title js_sharetitle"></h2>
+						<a
+							className="share__section--link js_parrafo_share"
+							target="blank"></a>
+						<h3 className="titlecompartir">Compartir</h3>
+						<div className="section_buttons">
+							<button className="share__section--button">
+								<a
+									className="js_linktwitter linktwitter"
+									target="blank"
+									href="https://twitter.com/">
+									<i className="fab fa-twitter"></i> Twitter
+								</a>
+							</button>
+							<button className="share__section--button">
+								<a
+									className="js_linkFacebook linktwitter"
+									target="blank"
+									href="https://es-es.facebook.com/">
+									<i className="fab fa-facebook"></i> Facebook
+								</a>
+							</button>
+							<button className="share__section--button">
+								<a
+									className="js_linkLinkedin linktwitter"
+									target="blank"
+									href="https://www.linkedin.com/in/">
+									<i className="fab fa-linkedin-in js-icon"></i>
+									Linkedin
+								</a>
+							</button>
+						</div>
+					</section>
 				</section>
 			</main>
 			<footer className="footer">

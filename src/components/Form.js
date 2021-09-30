@@ -29,7 +29,6 @@ const Form = (props) => {
     }
 
     setCollapsableShare('hidden');
-
     setArrow3('fa-chevron-down');
   };
 
@@ -45,7 +44,6 @@ const Form = (props) => {
       setArrow3('fa-chevron-up');
     }
     setCollapsableDesign('hidden');
-
     setArrow('fa-chevron-down');
   };
 

@@ -12,6 +12,16 @@ const Collapsable =(props)=>{
 
 
     }
+    const renderArrow = ()=>{
+        
+        if(props.text === 'Diseña'){
+           return props.arrow;
+        }else if(props.text === 'Rellena'){
+            return props.arrow2;
+        }else if(props.text === 'Comparte'){
+            return props.arrow3;
+        }
+    }
 
 
     return (
@@ -21,7 +31,7 @@ const Collapsable =(props)=>{
               >
                 <i className={props.className}></i>
                 <h2 className="title">{props.text}</h2>
-                <i className={`fas ${props.arrow} arrow js_arrow`}></i>
+                <i className={`fas ${renderArrow()} arrow js_arrow`}></i>
               </div>
 
     );

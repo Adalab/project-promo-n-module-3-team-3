@@ -436,7 +436,7 @@ function App() {
 							</div>
 						</fieldset>
 					</form>
-					<section className="share__section  js_share_twitter">
+					<section className="share__section hidden js_share_twitter">
 						<h2 className="share__section--title js_sharetitle"></h2>
 						<a
 							className="share__section--link js_parrafo_share"

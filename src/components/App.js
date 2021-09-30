@@ -7,8 +7,6 @@ import Form from './Form';
 import Footer from './Footer';
 
 function App() {
-  
-
   const [data, setData] = useState({
     palette: 'palette1',
     name: '',
@@ -20,41 +18,42 @@ function App() {
     github: '',
   });
 
-  
+  const handleImage = (imageData) => {
+    console.log(imageData);
+    setData({ ...data, image: imageData });
+  };
 
   const handleInput = (targetName, targetValue) => {
-      
-    
-	if (targetName === 'name') {
-	  setData({
-		...data,
-		name: targetValue,
-	  });
-	} else if (targetName === 'job') {
-	  setData({
-		...data,
-		job: targetValue,
-	  });
-	} else if (targetName === 'phone') {
-	  setData({
-		...data,
-		phone: targetValue,
-	  });
-	} else if (targetName === 'email') {
-	  setData({
-		...data,
-		email: targetValue,
-	  });
-	} else if (targetName === 'linkedin') {
-	  setData({
-		...data,
-		linkedin: targetValue,
-	  });
-	} else if (targetName === 'github') {
-	  setData({
-		...data,
-		github: targetValue,
-	  });
+    if (targetName === 'name') {
+      setData({
+        ...data,
+        name: targetValue,
+      });
+    } else if (targetName === 'job') {
+      setData({
+        ...data,
+        job: targetValue,
+      });
+    } else if (targetName === 'phone') {
+      setData({
+        ...data,
+        phone: targetValue,
+      });
+    } else if (targetName === 'email') {
+      setData({
+        ...data,
+        email: targetValue,
+      });
+    } else if (targetName === 'linkedin') {
+      setData({
+        ...data,
+        linkedin: targetValue,
+      });
+    } else if (targetName === 'github') {
+      setData({
+        ...data,
+        github: targetValue,
+      });
     } else if (targetName === 'color_palette') {
       setData({
         ...data,
@@ -63,18 +62,16 @@ function App() {
     }
   };
 
- 
-
   return (
     <div className="page">
-      	<Header />
-      	<main className="main_grid">
+      <Header />
+      <main className="main_grid">
         <Preview data={data} />
-        <Form data={data} handleInput={handleInput}/>   
-		</main>     
-      	<Footer />
+        <Form handleImage={handleImage} data={data} handleInput={handleInput} />
+      </main>
+      <Footer />
     </div>
   );
-  }
+}
 
 export default App;

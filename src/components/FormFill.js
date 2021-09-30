@@ -1,6 +1,7 @@
 import '../styles/components/formFill.scss';
 import FormFillInput from './FormFillInput';
 import Collapsable from './Collapsable';
+import ImageReader from './ImageReader';
 
 const FormFill = (props) => {
   return (
@@ -37,7 +38,7 @@ const FormFill = (props) => {
           value={props.data.job}
           handleInput={props.handleInput}
         />
-
+        <ImageReader handleImage={props.handleImage} data={props.data} />
         <label htmlFor="image" className="label">
           Imagen de perfil
           <span className="span">*</span>

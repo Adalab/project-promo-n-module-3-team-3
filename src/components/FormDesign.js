@@ -5,8 +5,9 @@ import Collapsable from './Collapsable';
 //function
 const FormDesign = (prop) => {
   
-  const handleInput = () => {
-    prop.handleInput();
+  const handleInput = (ev) => {
+   return prop.handleInput(ev.currentTarget.name, ev.currentTarget.value);
+
   };
 
   

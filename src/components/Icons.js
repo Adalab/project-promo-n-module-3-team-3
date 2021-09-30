@@ -1,14 +1,19 @@
-import '../styles/components/preview.scss';
+import "../styles/components/preview.scss";
 
 function Icons(props) {
   return (
     <li>
       <a
-        className="main__cards--section__links--item"
+        className="main__cards--section__links--item icon-circle"
         id={props.id}
-        href={props.phone === '' ? '555-555-555' : `tel: ${props.phone}`}
+        title={props.title}
+        href={
+          props.text === "" ? props.placeHolder : `${props.goTo}${props.text}`
+        }
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <i className="fas fa-mobile-alt"></i>
+        <i className={`${props.iconClass} icon`}></i>
       </a>
     </li>
   );

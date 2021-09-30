@@ -7,7 +7,7 @@ function Preview(props) {
       <button className="main__cards--button">
         <i className="far fa-trash-alt"></i> Reset
       </button>
-      <section className="main__cards--section palette1">
+      <section className={`main__cards--section ${props.data.palette}`}>
         <div className="grid-sidebar">
           <div className="main__cards--section__sidebar"></div>
           <h1 className="main__cards--section__title1">
@@ -19,69 +19,40 @@ function Preview(props) {
         </div>
         <div className="main__cards--section__img profile__image"></div>
         <nav>
-          <ul className="main__cards--section__links">
-            {/* <Icons -----------------------------------------------------/> */}
-            {/* <Icons />
-            <Icons />
-            <Icons />
-            <Icons /> */}
-
-            <li>
-              <a
-                className="main__cards--section__links--item"
-                id="mobile_link"
-                href={
-                  props.data.phone === ''
-                    ? '555-555-555'
-                    : `tel: ${props.data.phone}`
-                }
-              >
-                <i className="fas fa-mobile-alt"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                className="main__cards--section__links--item"
-                target="blank"
-                id="mail_link"
-                href={
-                  props.data.email === ''
-                    ? 'sally-hill@gmail.com'
-                    : `mailto: ${props.data.email}`
-                }
-              >
-                <i className="far fa-envelope"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                className="main__cards--section__links--item"
-                id="linkedin_link"
-                target="blank"
-                href={
-                  props.data.linkedin === ''
-                    ? 'linkedin.com/in/sally.hill'
-                    : props.data.linkedin
-                }
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                className="main__cards--section__links--item"
-                id="github_link"
-                target="blank"
-                href={
-                  props.data.github === ''
-                    ? 'sally-hill'
-                    : `https://github.com/ ${props.data.github}`
-                }
-              >
-                <i className="fab fa-github-alt"></i>
-              </a>
-            </li>
-          </ul>
+        <ul className="main__cards--section__links">
+                <Icons
+                  id="mobile_link"
+                  title="Llamar"
+                  text={props.phone}
+                  placeHolder="555-555-555"
+                  goTo="tel:"
+                  iconClass="fas fa-mobile-alt"
+                />
+                <Icons
+                  id="mail_link"
+                  title="Escribir email"
+                  text={props.email}
+                  placeHolder="sally-hill@gmail.com"
+                  goTo="mailto:"
+                  iconClass="far fa-envelope"
+                />
+                <Icons
+                  id="linkedin_link"
+                  title="LinkedIn"
+                  text={props.linkedin}
+                  placeHolder="sally.hill"
+                  goTo={`https://www.linkedin.com/in/${props.linkedin}`}
+                  iconClass="fab fa-linkedin-in"
+                />
+                <Icons
+                  id="github_link"
+                  title="GitHub"
+                  text={props.github}
+                  placeHolder="sally.hill"
+                  goTo={`https://github.com/${props.github}`}
+                  iconClass="fab fa-github-alt"
+                />
+              </ul>
         </nav>
       </section>
     </section>

@@ -19,40 +19,40 @@ function Preview(props) {
         </div>
         <div className="main__cards--section__img profile__image"></div>
         <nav>
-        <ul className="main__cards--section__links">
-                <Icons
-                  id="mobile_link"
-                  title="Llamar"
-                  text={props.phone}
-                  placeHolder="555-555-555"
-                  goTo="tel:"
-                  iconClass="fas fa-mobile-alt"
-                />
-                <Icons
-                  id="mail_link"
-                  title="Escribir email"
-                  text={props.email}
-                  placeHolder="sally-hill@gmail.com"
-                  goTo="mailto:"
-                  iconClass="far fa-envelope"
-                />
-                <Icons
-                  id="linkedin_link"
-                  title="LinkedIn"
-                  text={props.linkedin}
-                  placeHolder="sally.hill"
-                  goTo={`https://www.linkedin.com/in/${props.linkedin}`}
-                  iconClass="fab fa-linkedin-in"
-                />
-                <Icons
-                  id="github_link"
-                  title="GitHub"
-                  text={props.github}
-                  placeHolder="sally.hill"
-                  goTo={`https://github.com/${props.github}`}
-                  iconClass="fab fa-github-alt"
-                />
-              </ul>
+          <ul className="main__cards--section__links">
+            <Icons
+              id="mobile_link"
+              title="Llamar"
+              text={props.data.phone}
+              placeHolder="555-555-555"
+              goTo="tel:"
+              iconClass="fas fa-mobile-alt"
+            />
+            <Icons
+              id="mail_link"
+              title="Escribir email"
+              text={props.data.email}
+              placeHolder="sally-hill@gmail.com"
+              goTo="mailto:"
+              iconClass="far fa-envelope"
+            />
+            <Icons
+              id="linkedin_link"
+              title="LinkedIn"
+              text={props.data.linkedin}
+              placeHolder="sally.hill"
+              goTo="https://www.linkedin.com/in/"
+              iconClass="fab fa-linkedin-in"
+            />
+            <Icons
+              id="github_link"
+              title="GitHub"
+              text={props.data.github}
+              placeHolder="sally.hill"
+              goTo="https://github.com/"
+              iconClass="fab fa-github-alt"
+            />
+          </ul>
         </nav>
       </section>
     </section>

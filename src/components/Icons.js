@@ -8,7 +8,7 @@ function Icons(props) {
         id={props.id}
         title={props.title}
         href={
-          props.text === "" ? props.placeHolder : `${props.goTo} ${props.text}`
+          props.text === "" ? props.placeHolder : `${props.goTo}${props.text}`
         }
         rel="noopener noreferrer"
         target="_blank"

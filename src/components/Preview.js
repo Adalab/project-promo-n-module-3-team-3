@@ -57,7 +57,7 @@ function Preview() {
                   title="GitHub"
                   text={props.github}
                   placeHolder="sally.hill"
-                  goTo={`https://github.com/ ${props.github}`}
+                  goTo={`https://github.com/${props.github}`}
                   iconClass="fab fa-github-alt"
                 />
               </ul>

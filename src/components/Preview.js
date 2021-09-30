@@ -1,7 +1,7 @@
 import "../styles/Variables.scss";
 import "../styles/Preview.scss";
 
-//import Icons from "./Icons";
+import Icons from "./Icons";
 
 function Preview() {
   const handleReset = (ev) => {

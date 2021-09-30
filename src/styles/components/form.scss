@@ -1,0 +1,25 @@
+@import "../core/variables.scss";
+.form .hidden {
+  display: none;
+}
+
+.section_form {
+  @media all and (min-width: 768px) {
+    grid-column: 1 / 2;
+  }
+}
+
+.form {
+  padding: 20px 20px 30px;
+  font-family: $mainfont;
+  background: rgb(245, 245, 245);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(255, 255, 255, 1) 18%
+  );
+
+  @media all and (min-width: 768px) {
+    padding: 20px 30px 40px;
+  }
+}

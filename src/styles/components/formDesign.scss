@@ -1,0 +1,82 @@
+@import "../core/variables.scss";
+@import "./links.scss";
+
+.palette {
+  width: 30px;
+  height: 25px;
+}
+.input_palette {
+  margin-right: 10px;
+}
+.first_palette {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+
+  .colorOne {
+    background-color: $darkgreenblue;
+  }
+  .colorTwo {
+    background-color: $dirtyblue;
+  }
+  .colorThree {
+    background-color: $hospitalgreen;
+  }
+}
+.second_palette {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+
+  .colorOne {
+    background-color: #420101;
+  }
+  .colorTwo {
+    background-color: #bd1010;
+  }
+  .colorThree {
+    background-color: #e95626;
+  }
+}
+.third_palette {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  .colorOne {
+    background-color: #3e5b65;
+  }
+  .colorTwo {
+    background-color: #eab052;
+  }
+  .colorThree {
+    background-color: #a0c0cf;
+  }
+}
+.fourth_palette {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  .colorOne {
+    background-color: #6d2c7d;
+  }
+  .colorTwo {
+    background-color: #ff40a0;
+  }
+  .colorThree {
+    background-color: #6b54ff;
+  }
+}
+.fifth_palette {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  .colorOne {
+    background-color: #00a832;
+  }
+  .colorTwo {
+    background-color: #14ff30;
+  }
+  .colorThree {
+    background-color: #8affad;
+  }
+}

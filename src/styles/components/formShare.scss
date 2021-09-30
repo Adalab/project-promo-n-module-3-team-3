@@ -1,0 +1,79 @@
+@import "../core/variables";
+@import "./links.scss";
+
+.share__section {
+  text-decoration: none;
+  margin: 0px 20px 30px 20px;
+  font-family: $mainfont;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media all and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  .share__section--title {
+    color: $gunmetal;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .share__section--link {
+    color: $dullorange;
+    font-size: 12px;
+    margin: 10px 0px 15px 0px;
+    text-align: center;
+  }
+  .share__section--button {
+    background-color: $azure;
+    line-height: 1.5;
+    width: 181px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  .linktwitter {
+    text-decoration: none;
+    font-size: 15px;
+    color: $whitetwo;
+    font-family: $mainfont;
+  }
+  .titlecompartir {
+    font-family: $mainfont;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px;
+    color: $dullorange;
+  }
+  .section_buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media all and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 10px;
+    }
+  }
+}
+.button__card {
+  background-color: $dullorange;
+  width: 199px;
+  height: 50px;
+  font-size: 18px;
+  font-family: $mainfont;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  grid-column: span 2;
+  margin: 30px auto;
+}
+.hidden {
+  display: none;
+}

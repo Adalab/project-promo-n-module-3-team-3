@@ -1,0 +1,21 @@
+@import "../core/variables.scss";
+
+@import "./links.scss";
+
+.section__title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: $gunmetal;
+  padding: 10px;
+  border-bottom: 1px solid #d8d8d8;
+  .arrow {
+    flex: 2;
+    text-align: end;
+  }
+  .title {
+    padding: 0 10px;
+  }
+}

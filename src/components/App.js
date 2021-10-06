@@ -19,9 +19,11 @@ function App() {
     github: "",
   });
 
-  // useEffect(() => {
-  //   ls.set[data];
-  // }, [data]);
+  useEffect(() => {
+    ls.set("data", JSON.stringify(data));
+  }, [data]);
+
+  const savedData = JSON.parse(ls.get("data"));
 
   const handleInput = (targetName, targetValue) => {
     if (targetName === "name") {

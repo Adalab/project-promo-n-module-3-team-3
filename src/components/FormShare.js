@@ -24,6 +24,7 @@ const FormShare = (props) => {
 			<section className="share__section hidden js_share_twitter">
 				<h2 className="share__section--title js_sharetitle"></h2>
 				<a
+					href="/"
 					className="share__section--link js_parrafo_share"
 					target="blank"></a>
 				<h3 className="titlecompartir">Compartir</h3>

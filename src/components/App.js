@@ -18,6 +18,11 @@ function App() {
     github: '',
   });
 
+  const handleImage = (imageData) => {
+    console.log(imageData);
+    setData({ ...data, image: imageData });
+  };
+
   const handleInput = (targetName, targetValue) => {
     if (targetName === 'name') {
       setData({
@@ -62,7 +67,7 @@ function App() {
       <Header />
       <main className="main_grid">
         <Preview data={data} />
-        <Form data={data} handleInput={handleInput} />
+        <Form data={data} handleInput={handleInput} handleImage={handleImage} />
       </main>
       <Footer />
     </div>

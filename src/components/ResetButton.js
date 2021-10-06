@@ -4,6 +4,7 @@ import ls from "../services/localStorage";
 function ResetButton() {
   const handleClickReset = () => {
     ls.clear("data");
+    window.location.reload(true);
   };
 
   return (

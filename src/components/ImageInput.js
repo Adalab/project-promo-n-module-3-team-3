@@ -1,8 +1,6 @@
 import { useRef, useState } from 'react';
 
 const ImageReader = (props) => {
-  const [fileSize, setFileSize] = useState(0);
-  const [fileType, setFileType] = useState('desconocida');
   const fileElement = useRef(); // referencia al input file
   const fileReader = new FileReader(); // Creamos un lector de ficheros con FileReader: funcionalidad nativa de JS
 
@@ -11,25 +9,16 @@ const ImageReader = (props) => {
     const selectedFile = fileElement.current.files[0]; // fileElement.current.files es un array con todas las imagenes seleccionadas
     // Si la usuaria ha seleccionado al menos una imagen selectedFile es diferente de undefined
     if (selectedFile) {
-      // Por curiosidad mira lo que contiene la constante selectedFile
-      setFileSize(selectedFile.size);
-      setFileType(selectedFile.type);
-      // Le decimos al lector de ficheros que lea el fichero seleccionado por la usuaria
-      fileReader.readAsDataURL(selectedFile);
-      // Cuando esta acción termine fileReader lanzará el evento 'load'
+      fileReader.readAsDataURL(selectedFile); // Le decimos al lector de ficheros que lea el fichero seleccionado por la usuaria. Cuando esta acción termine fileReader lanzará el evento 'load'
     }
   };
 
   // Esta función se ejecuta cuando fileReader lanza el evento 'load'
   const getImage = () => {
-    // Cuando la imagen ya está lista en fileReader.result tenemos su contenido
-    props.handleImage(fileReader.result);
-    // Hacemos lifting
+    props.handleImage(fileReader.result); // Cuando la imagen ya está lista en fileReader.result tenemos su contenido. Hacemos lifting
   };
-  const image = props.data.image;
-  console.log('url', image);
-  // Escuchamos el evento load de fileReader y cuando se lance lo manejamos con la función getImage
-  fileReader.addEventListener('load', getImage);
+
+  fileReader.addEventListener('load', getImage); // Escuchamos el evento load de fileReader y cuando se lance lo manejamos con la función getImage
 
   return (
     <>
@@ -55,7 +44,7 @@ const ImageReader = (props) => {
       <div className="profile">
         <div
           className="AQUI profile__preview js__profile-preview"
-          style={{ backgroundImage: { image } }}
+          style={{ backgroundImage: `url(${props.data.image})` }}
         ></div>
       </div>
     </>

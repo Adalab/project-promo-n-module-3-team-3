@@ -19,7 +19,6 @@ const ImageReader = (props) => {
   };
 
   fileReader.addEventListener('load', getImage); // Escuchamos el evento load de fileReader y cuando se lance lo manejamos con la función getImage
-
   return (
     <>
       <label htmlFor="image" className="label">

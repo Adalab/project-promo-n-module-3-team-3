@@ -64,7 +64,7 @@ function App() {
 
       <Header />
       <Switch>
-        <Route extact path='/'>
+        <Route exact path='/'>
           <Landing />
         </Route>
         <Route path='/cards'>
@@ -72,6 +72,9 @@ function App() {
             <Preview data={data} />
             <Form data={data} handleInput={handleInput} />
           </main>
+        </Route>
+        <Route>
+          <h2>Página no encontrada.</h2>
         </Route>
       </Switch>
       <Footer />

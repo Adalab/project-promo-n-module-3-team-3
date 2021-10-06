@@ -11,15 +11,15 @@ function App() {
     palette: 'palette1',
     name: '',
     job: '',
-    image: '',
+    image:
+      'https://i1.wp.com/www.puntogeek.com/wp-content/uploads/2011/01/jabbascript.jpg?resize=527%2C348',
     phone: '',
     email: '',
     linkedin: '',
     github: '',
   });
-
+  console.log(data.image);
   const handleImage = (imageData) => {
-    console.log(imageData);
     setData({ ...data, image: imageData });
   };
 
@@ -61,7 +61,6 @@ function App() {
       });
     }
   };
-  console.log(data.palette);
 
   return (
     <div className="page">

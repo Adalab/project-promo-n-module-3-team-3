@@ -19,7 +19,13 @@ function Preview(props) {
         </div>
         <div
           className="main__cards--section__img profile__image"
-          style={{ backgroundImage: `url(${props.data.image})` }}
+          style={
+            props.data.image === ''
+              ? {
+                  backgroundImage: `url('https://i1.wp.com/www.puntogeek.com/wp-content/uploads/2011/01/jabbascript.jpg?resize=527%2C348')`,
+                }
+              : { backgroundImage: `url(${props.data.image})` }
+          }
         ></div>
         <nav>
           <ul className="main__cards--section__links">

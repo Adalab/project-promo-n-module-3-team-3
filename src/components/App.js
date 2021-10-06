@@ -5,6 +5,8 @@ import Header from './Header';
 import Preview from './Preview';
 import Form from './Form';
 import Footer from './Footer';
+import {  Route, Switch } from 'react-router-dom';
+import Landing from './Landing';
 
 function App() {
   const [data, setData] = useState({
@@ -59,11 +61,19 @@ function App() {
 
   return (
     <div className="page">
+
       <Header />
-      <main className="main_grid">
-        <Preview data={data} />
-        <Form data={data} handleInput={handleInput} />
-      </main>
+      <Switch>
+        <Route extact path='/'>
+          <Landing />
+        </Route>
+        <Route path='/cards'>
+          <main className="main_grid">
+            <Preview data={data} />
+            <Form data={data} handleInput={handleInput} />
+          </main>
+        </Route>
+      </Switch>
       <Footer />
     </div>
   );

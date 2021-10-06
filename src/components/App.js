@@ -61,6 +61,7 @@ function App() {
       });
     }
   };
+  console.log(data.palette);
 
   return (
     <div className="page">

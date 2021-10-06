@@ -67,6 +67,8 @@ const Form = (props) => {
           arrow={arrow}
           collapsableDesign={collapsableDesign}
           handleInput={props.handleInput}
+          //   not nedded
+          data={props.data}
         />
 
         <FormFill

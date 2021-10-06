@@ -87,27 +87,6 @@
     border: 1px solid #ccc;
     background-image: url("../../images/jabbascript-social.jpg");
   }
-  .main__cards--section__links {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 5px;
-    margin-left: 15px;
-  }
-  .main__cards--section__links--item {
-    display: block;
-    text-decoration: none;
-    color: $darkgreenblue;
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    border: solid 2px $hospitalgreen;
-    border-radius: 16px;
-    text-align: center;
-    line-height: 1.75;
-    margin: 5px;
-  }
 }
 
 .palette1 {

@@ -1,6 +1,7 @@
 import '../styles/components/formFill.scss';
 import FormFillInput from './FormFillInput';
 import Collapsable from './Collapsable';
+import ImageInput from './ImageInput';
 
 const FormFill = (props) => {
   return (
@@ -37,8 +38,8 @@ const FormFill = (props) => {
           value={props.data.job}
           handleInput={props.handleInput}
         />
-
-        <label htmlFor="image" className="label">
+        <ImageInput handleImage={props.handleImage} data={props.data} />
+        {/* <label htmlFor="image" className="label">
           Imagen de perfil
           <span className="span">*</span>
         </label>
@@ -57,7 +58,7 @@ const FormFill = (props) => {
 
         <div className="profile">
           <div className="profile__preview js__profile-preview"></div>
-        </div>
+        </div> */}
 
         <FormFillInput
           htmlFor="email"

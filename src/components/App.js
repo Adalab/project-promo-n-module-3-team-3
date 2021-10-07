@@ -11,12 +11,17 @@ function App() {
     palette: 'palette1',
     name: '',
     job: '',
-    image: '',
+    image:
+      'https://i1.wp.com/www.puntogeek.com/wp-content/uploads/2011/01/jabbascript.jpg?resize=527%2C348',
     phone: '',
     email: '',
     linkedin: '',
     github: '',
   });
+  console.log(data.image);
+  const handleImage = (imageData) => {
+    setData({ ...data, image: imageData });
+  };
 
   const handleInput = (targetName, targetValue) => {
     if (targetName === 'name') {
@@ -62,7 +67,7 @@ function App() {
       <Header />
       <main className="main_grid">
         <Preview data={data} />
-        <Form data={data} handleInput={handleInput} />
+        <Form data={data} handleInput={handleInput} handleImage={handleImage} />
       </main>
       <Footer />
     </div>

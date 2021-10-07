@@ -80,6 +80,7 @@ const Form = (props) => {
 					handlerCollapsableShare={handlerCollapsableShare}
 					arrow3={arrow3}
 					collapsableShare={collapsableShare}
+					data={props.data}
 				/>
 			</form>
 		</section>

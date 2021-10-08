@@ -1,14 +1,15 @@
 // Fichero src/components/App.js
-import { useState } from 'react';
-import '../styles/app.scss';
-import Header from './Header';
-import Preview from './Preview';
-import Form from './Form';
-import Footer from './Footer';
+import { useState, useEffect } from "react";
+import "../styles/app.scss";
+import Header from "./Header";
+import Preview from "./Preview";
+import Form from "./Form";
+import Footer from "./Footer";
+import ls from "../services/localStorage";
 
 function App() {
   const [data, setData] = useState({
-    palette: 'palette1',
+palette: 'palette1',
     name: '',
     job: '',
     image:
@@ -23,38 +24,42 @@ function App() {
     setData({ ...data, image: imageData });
   };
 
+  useEffect(() => {
+    ls.set("data", JSON.stringify(data));
+  }, [data]);
+
   const handleInput = (targetName, targetValue) => {
-    if (targetName === 'name') {
+    if (targetName === "name") {
       setData({
         ...data,
         name: targetValue,
       });
-    } else if (targetName === 'job') {
+    } else if (targetName === "job") {
       setData({
         ...data,
         job: targetValue,
       });
-    } else if (targetName === 'phone') {
+    } else if (targetName === "phone") {
       setData({
         ...data,
         phone: targetValue,
       });
-    } else if (targetName === 'email') {
+    } else if (targetName === "email") {
       setData({
         ...data,
         email: targetValue,
       });
-    } else if (targetName === 'linkedin') {
+    } else if (targetName === "linkedin") {
       setData({
         ...data,
         linkedin: targetValue,
       });
-    } else if (targetName === 'github') {
+    } else if (targetName === "github") {
       setData({
         ...data,
         github: targetValue,
       });
-    } else if (targetName === 'color_palette') {
+    } else if (targetName === "color_palette") {
       setData({
         ...data,
         palette: targetValue,

@@ -1,16 +1,18 @@
-import '../styles/components/preview.scss';
-import Icons from './Icons';
+import "../styles/components/preview.scss";
+import Icons from "./Icons";
+import ResetButton from "./ResetButton";
 
 function Preview(props) {
   return (
     <section className="main__cards">
-      <button className="main__cards--button">
-        <i className="far fa-trash-alt"></i> Reset
-      </button>
+
+      <ResetButton />
+
       <section className={`main__cards--section ${props.data.palette}`}>
         <div className="grid-sidebar">
           <div className="main__cards--section__sidebar"></div>
           <h1 className="main__cards--section__title1">
+
             {props.data.name === '' ? 'Nombre Apellido' : props.data.name}
           </h1>
           <h2 className="main__cards--section__title2">

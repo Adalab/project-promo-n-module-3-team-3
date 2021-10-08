@@ -29,6 +29,10 @@ function App() {
     ls.set("data", JSON.stringify(data));
   }, [data]);
 
+  useEffect(() => {
+    setData(ls.get(data, data));
+  }, []);
+
   const handleInput = (targetName, targetValue) => {
     if (targetName === "name") {
       setData({

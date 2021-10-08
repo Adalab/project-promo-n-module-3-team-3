@@ -1,70 +1,67 @@
 // Fichero src/components/App.js
-import { useState, useEffect } from "react";
-import "../styles/app.scss";
-import Header from "./Header";
-import Preview from "./Preview";
-import Form from "./Form";
-import Footer from "./Footer";
-import { Route, Switch } from "react-router-dom";
-import Landing from "./Landing";
-import ls from "../services/localStorage";
+import { useState, useEffect } from 'react';
+import '../styles/app.scss';
+import Header from './Header';
+import Preview from './Preview';
+import Form from './Form';
+import Footer from './Footer';
+import { Route, Switch } from 'react-router-dom';
+import Landing from './Landing';
+import ls from '../services/localStorage';
 
 function App() {
-  const [data, setData] = useState({
-    palette: "palette1",
-    name: "",
-    job: "",
+  const defaultData = {
+    palette: 'palette1',
+    name: '',
+    job: '',
     photo:
-      "https://i1.wp.com/www.puntogeek.com/wp-content/uploads/2011/01/jabbascript.jpg?resize=527%2C348",
-    phone: "",
-    email: "",
-    linkedin: "",
-    github: "",
-  });
+      'https://i1.wp.com/www.puntogeek.com/wp-content/uploads/2011/01/jabbascript.jpg?resize=527%2C348',
+    phone: '',
+    email: '',
+    linkedin: '',
+    github: '',
+  };
+  const [data, setData] = useState(ls.get('data', defaultData));
   const handleImage = (imageData) => {
     setData({ ...data, photo: imageData });
   };
 
   useEffect(() => {
-    ls.set("data", JSON.stringify(data));
+    ls.set('data', data);
   }, [data]);
 
-  useEffect(() => {
-    setData(ls.get(data, data));
-  }, []);
-
   const handleInput = (targetName, targetValue) => {
-    if (targetName === "name") {
+    if (targetName === 'name') {
       setData({
         ...data,
         name: targetValue,
       });
-    } else if (targetName === "job") {
+    } else if (targetName === 'job') {
       setData({
         ...data,
         job: targetValue,
       });
-    } else if (targetName === "phone") {
+    } else if (targetName === 'phone') {
       setData({
         ...data,
         phone: targetValue,
       });
-    } else if (targetName === "email") {
+    } else if (targetName === 'email') {
       setData({
         ...data,
         email: targetValue,
       });
-    } else if (targetName === "linkedin") {
+    } else if (targetName === 'linkedin') {
       setData({
         ...data,
         linkedin: targetValue,
       });
-    } else if (targetName === "github") {
+    } else if (targetName === 'github') {
       setData({
         ...data,
         github: targetValue,
       });
-    } else if (targetName === "color_palette") {
+    } else if (targetName === 'color_palette') {
       setData({
         ...data,
         palette: targetValue,

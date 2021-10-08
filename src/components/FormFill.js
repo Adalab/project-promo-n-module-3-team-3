@@ -1,7 +1,7 @@
-import "../styles/components/formFill.scss";
-import FormFillInput from "./FormFillInput";
-import Collapsable from "./Collapsable";
-import ImageInput from "./ImageInput";
+import '../styles/components/formFill.scss';
+import FormFillInput from './FormFillInput';
+import Collapsable from './Collapsable';
+import ImageInput from './ImageInput';
 
 const FormFill = (props) => {
   return (

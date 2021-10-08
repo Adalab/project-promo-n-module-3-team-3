@@ -1,17 +1,15 @@
-const ENDPOINT = "https://awesome-profile-cards.herokuapp.com/card";
+const ENDPOINT = 'https://awesome-profile-cards.herokuapp.com/card';
 
 const callToApi = (data) => {
-  console.log("fetch", data);
   return fetch(ENDPOINT, {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
       return response;
     });
 };

@@ -70,8 +70,7 @@ const Form = (props) => {
           //   not nedded
           data={props.data}
         />
-
-        <FormFill
+          <FormFill
           handlerCollapsableFill={handlerCollapsableFill}
           arrow2={arrow2}
           collapsableFill={collapsableFill}
@@ -80,14 +79,16 @@ const Form = (props) => {
           data={props.data}
         />
 
-        <FormShare
-          handlerCollapsableShare={handlerCollapsableShare}
-          arrow3={arrow3}
-          collapsableShare={collapsableShare}
-        />
-      </form>
-    </section>
-  );
+				<FormShare
+					handlerCollapsableShare={handlerCollapsableShare}
+					arrow3={arrow3}
+					collapsableShare={collapsableShare}
+					data={props.data}
+				/>
+			</form>
+		</section>
+	);
+
 };
 
 export default Form;

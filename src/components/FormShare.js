@@ -1,7 +1,30 @@
 import '../styles/components/formShare.scss';
 import Collapsable from './Collapsable';
+import { useState } from 'react';
+import api from '../services/callToApi';
 
 const FormShare = (props) => {
+	const [urlShare, setUrlShare] = useState('');
+	const [successCard, setSuccessCard] = useState('hidden');
+	const [cardCreated, setCardCreated] = useState('');
+
+	const [link, setLink] = useState('');
+	const handleFetch = (ev) => {
+		ev.preventDefault();
+
+		api(props.data).then((response) => {
+			setUrlShare(response.cardURL);
+			if (response.success) {
+				setSuccessCard('');
+				setCardCreated('');
+				setLink('');
+			} else {
+				setSuccessCard('');
+				setCardCreated('hidden');
+				setLink('hidden');
+			}
+		});
+	};
 	return (
 		<>
 			<fieldset>
@@ -15,49 +38,66 @@ const FormShare = (props) => {
 
 				<div
 					className={`js_content div_content  ${props.collapsableShare}`}>
-					<button className="button__card js_button_share">
+					<button
+						className="button__card js_button_share"
+						title="Crear Tarjeta"
+						target="_blank"
+						onClick={handleFetch}>
 						<i className="far fa-address-card"></i> Crear tarjeta
 					</button>
 				</div>
 			</fieldset>
-			{/* // pendiente poner dentro del form la sección de compartir */}
-			<section className="share__section hidden js_share_twitter">
-				<h2 className="share__section--title js_sharetitle"></h2>
+			<section
+				className={`share__section ${successCard} ${cardCreated} js_share_twitter`}>
+				<h2 className={`share__section--title js_sharetitle `}>
+					La tarjeta ha sido creada
+				</h2>
+
 				<a
-					href="/"
 					className="share__section--link js_parrafo_share"
-					target="blank"></a>
-				<h3 className="titlecompartir">Compartir</h3>
+					href={urlShare}
+					target="blank">
+					{urlShare}
+				</a>
+				<h3 className={`titlecompartir ${cardCreated}`}>Compartir</h3>
 				<div className="section_buttons">
-					<button className="share__section--button">
+					<button className={`share__section--button ${link}`}>
 						<a
 							className="js_linktwitter linktwitter"
 							target="blank"
-							href="https://twitter.com/">
+							href={`https://twitter.com/intent/tweet?url=${urlShare}`}>
 							<i className="fab fa-twitter"></i> Twitter
 						</a>
 					</button>
-					<button className="share__section--button">
+					<button className={`share__section--button ${link}`}>
 						<a
 							className="js_linkFacebook linktwitter"
 							target="blank"
-							href="https://es-es.facebook.com/">
+							href={`https://www.facebook.com/sharer/sharer.php?u=${urlShare}`}>
 							<i className="fab fa-facebook"></i> Facebook
 						</a>
 					</button>
-					<button className="share__section--button">
+					<button className={`share__section--button ${link}`}>
 						<a
 							className="js_linkLinkedin linktwitter"
 							target="blank"
-							href="https://www.linkedin.com/in/">
-							<i className="fab fa-linkedin-in js-icon"></i>{' '}
+							href={`https://www.linkedin.com/shareArticle?url=${urlShare}`}>
+							<i className="fab fa-linkedin-in js-icon"></i>
 							Linkedin
 						</a>
 					</button>
 				</div>
 			</section>
+			<section
+				className={`share__section ${successCard} js_share_twitter`}>
+				<h2 className="share__section--title js_sharetitle ">
+					Error al crear tarjeta:
+				</h2>
+				<p className="share__section--link js_parrafo_share">
+					Por favor, revise los datos introducidos
+				</p>
+			</section>
 		</>
 	);
 };
-
 export default FormShare;

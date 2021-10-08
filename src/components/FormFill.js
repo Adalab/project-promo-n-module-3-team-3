@@ -1,7 +1,7 @@
-import '../styles/components/formFill.scss';
-import FormFillInput from './FormFillInput';
-import Collapsable from './Collapsable';
-import ImageInput from './ImageInput';
+import "../styles/components/formFill.scss";
+import FormFillInput from "./FormFillInput";
+import Collapsable from "./Collapsable";
+import ImageInput from "./ImageInput";
 
 const FormFill = (props) => {
   return (
@@ -82,6 +82,7 @@ const FormFill = (props) => {
           className="input js_input_link"
           value={props.data.phone}
           handleInput={props.handleInput}
+          handleImage={props.handleImage}
         />
 
         <FormFillInput

@@ -1,10 +1,12 @@
 // Fichero src/components/App.js
 import { useState, useEffect } from "react";
-import "../styles/app.scss";
-import Header from "./Header";
-import Preview from "./Preview";
-import Form from "./Form";
-import Footer from "./Footer";
+import '../styles/app.scss';
+import Header from './Header';
+import Preview from './Preview';
+import Form from './Form';
+import Footer from './Footer';
+import {  Route, Switch } from 'react-router-dom';
+import Landing from './Landing';
 import ls from "../services/localStorage";
 
 function App() {
@@ -69,11 +71,23 @@ palette: 'palette1',
 
   return (
     <div className="page">
+
       <Header />
-      <main className="main_grid">
-        <Preview data={data} />
-        <Form data={data} handleInput={handleInput} handleImage={handleImage} />
-      </main>
+      <Switch>
+        <Route exact path='/'>
+          <Landing />
+        </Route>
+        <Route path='/cards'>
+          <main className="main_grid">
+            <Preview data={data} />
+            <Form data={data} handleInput={handleInput} />
+          </main>
+        </Route>
+        <Route>
+          <h2>Página no encontrada.</h2>
+        </Route>
+      </Switch>
+
       <Footer />
     </div>
   );

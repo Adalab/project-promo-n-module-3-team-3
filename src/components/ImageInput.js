@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
 const ImageReader = (props) => {
   const fileElement = useRef(); // referencia al input file
@@ -18,7 +18,7 @@ const ImageReader = (props) => {
     props.handleImage(fileReader.result); // Cuando la imagen ya está lista en fileReader.result tenemos su contenido. Hacemos lifting
   };
 
-  fileReader.addEventListener('load', getImage); // Escuchamos el evento load de fileReader y cuando se lance lo manejamos con la función getImage
+  fileReader.addEventListener("load", getImage); // Escuchamos el evento load de fileReader y cuando se lance lo manejamos con la función getImage
   return (
     <>
       <label htmlFor="image" className="label">
@@ -43,7 +43,7 @@ const ImageReader = (props) => {
       <div className="profile">
         <div
           className="AQUI profile__preview js__profile-preview"
-          style={{ backgroundImage: `url(${props.data.image})` }}
+          style={{ backgroundImage: `url(${props.data.photo})` }}
         ></div>
       </div>
     </>

@@ -39,21 +39,7 @@
   }
 }
 
-.main__cards--button {
-  width: 75px;
-  height: 30px;
-  border-radius: 22px;
-  font-size: 12px;
-  font-family: $mainfont;
-  text-transform: uppercase;
-  color: $gunmetal;
-  background-color: $bluesilver;
-  border: solid 1px $whitetwo;
-  margin: auto auto 0px 0px;
-  grid-column: 2/3;
-}
 .main__cards--section {
-  //width: 240px;
   height: 329px;
   margin: 20px auto 40px auto;
   background-color: $whitetwo;
@@ -100,27 +86,6 @@
     background-size: cover;
     border: 1px solid #ccc;
     background-image: url("../../images/jabbascript-social.jpg");
-  }
-  .main__cards--section__links {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 5px;
-    margin-left: 15px;
-  }
-  .main__cards--section__links--item {
-    display: block;
-    text-decoration: none;
-    color: $darkgreenblue;
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    border: solid 2px $hospitalgreen;
-    border-radius: 16px;
-    text-align: center;
-    line-height: 1.75;
-    margin: 5px;
   }
 }
 

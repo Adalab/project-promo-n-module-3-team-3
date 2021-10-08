@@ -71,12 +71,13 @@ function App() {
 
   return (
     <div className="page">
-      <Header />
       <Switch>
         <Route exact path="/">
+          <Header classHeader="header_index header" />
           <Landing />
         </Route>
         <Route path="/cards">
+          <Header classHeader="header_cards header" />
           <main className="main_grid">
             <Preview data={data} />
             <Form

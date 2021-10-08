@@ -1,9 +1,9 @@
-import logo from '../images/logo-awesome-profile-cards.svg';
-import '../styles/components/header.scss';
+import logo from "../images/logo-awesome-profile-cards.svg";
+import "../styles/components/header.scss";
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <header className="header_cards header">
+    <header className={props.classHeader}>
       <div>
         <a href="http://beta.adalab.es/project-promo-n-module-2-team-2/">
           <img

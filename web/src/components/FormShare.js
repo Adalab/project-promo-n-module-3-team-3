@@ -1,30 +1,31 @@
-import '../styles/components/formShare.scss';
-import Collapsable from './Collapsable';
-import { useState } from 'react';
-import api from '../services/callToApi';
+import "../styles/components/formShare.scss";
+import Collapsable from "./Collapsable";
+import { useState } from "react";
+import api from "../services/callToApi";
 
 const FormShare = (props) => {
-  const [urlShare, setUrlShare] = useState('');
-  const [successCard, setSuccessCard] = useState('hidden');
-  const [errorCard, setErrorCard] = useState('hidden');
-  const [cardCreated, setCardCreated] = useState('');
+  const [urlShare, setUrlShare] = useState("");
+  const [successCard, setSuccessCard] = useState("hidden");
+  const [errorCard, setErrorCard] = useState("hidden");
+  const [cardCreated, setCardCreated] = useState("");
 
-  const [link, setLink] = useState('');
+  const [link, setLink] = useState("");
   const handleFetch = (ev) => {
     ev.preventDefault();
 
     api(props.data).then((response) => {
+      console.log(response.cardURL);
       setUrlShare(response.cardURL);
       if (response.success) {
-        setSuccessCard('');
-        setErrorCard('hidden');
-        setCardCreated('');
-        setLink('');
+        setSuccessCard("");
+        setErrorCard("hidden");
+        setCardCreated("");
+        setLink("");
       } else {
-        setSuccessCard('hidden');
-        setErrorCard('');
-        setCardCreated('hidden');
-        setLink('hidden');
+        setSuccessCard("hidden");
+        setErrorCard("");
+        setCardCreated("hidden");
+        setLink("hidden");
       }
     });
   };

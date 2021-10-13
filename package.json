@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {  
-    "start": "node src/index.js",  
-    "dev": "nodemon src/index.js"},
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "publish": "cd web && npm run build && cd .. && rm -rf ./public ; mv ./web/build ./public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Adalab/project-promo-n-module-3-team-3.git"

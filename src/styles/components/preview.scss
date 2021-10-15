@@ -1,4 +1,4 @@
-@import "../core/variables.scss";
+@import '../core/variables.scss';
 
 .main_grid {
   background: rgb(245, 245, 245);
@@ -85,12 +85,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid #ccc;
-    background-image: url("../../images/jabbascript-social.jpg");
+    background-image: url('../../images/jabbascript-social.jpg');
   }
 }
 
 .palette1 {
   .main__cards--section__title1 {
+    color: $darkgreenblue;
+  }
+  .main__cards--section__title2 {
     color: $darkgreenblue;
   }
   .main__cards--section__sidebar {
@@ -108,6 +111,9 @@
   .main__cards--section__title1 {
     color: #420101;
   }
+  .main__cards--section__title2 {
+    color: #420101;
+  }
   .main__cards--section__sidebar {
     background-color: #bd1010;
   }
@@ -121,6 +127,9 @@
 
 .palette3 {
   .main__cards--section__title1 {
+    color: #3e5b65;
+  }
+  .main__cards--section__title2 {
     color: #3e5b65;
   }
   .main__cards--section__sidebar {
@@ -137,6 +146,9 @@
   .main__cards--section__title1 {
     color: #6d2c7d;
   }
+  .main__cards--section__title2 {
+    color: #6d2c7d;
+  }
   .main__cards--section__sidebar {
     background-color: #ff40a0;
   }
@@ -149,6 +161,9 @@
 }
 .palette5 {
   .main__cards--section__title1 {
+    color: #00a832;
+  }
+  .main__cards--section__title2 {
     color: #00a832;
   }
   .main__cards--section__sidebar {

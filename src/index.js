@@ -65,8 +65,13 @@ server.post("/card", (req, res) => {
     );
     console.log(data);
     response.success = true;
-    response.cardURL = `http://react-machines.herokuapp.com/card/${data.lastInsertRowid}`;
+    if (req.hostname === "localhost") {
+      response.cardURL = `http://localhost:4000/card/${data.lastInsertRowid}`;
+    } else {
+      response.cardURL = `http://react-machines.herokuapp.com/card/${data.lastInsertRowid}`;
+    }
   }
+
   res.json(response);
 });
 

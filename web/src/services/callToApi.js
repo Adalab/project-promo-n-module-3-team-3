@@ -1,4 +1,4 @@
-const ENDPOINT = "//localhost:4000/card";
+const ENDPOINT = "/card";
 
 const callToApi = (data) => {
   console.log(data);

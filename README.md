@@ -1,10 +1,10 @@
 # Project-promo-n-module-3-team-3
 
-👋 Hi, We are _Team 3_
+👋 Hi, We are _Team 3 React Machines_
 
 We are currently learning Front-End Development and we hope you enjoy our project! 👀
 
-The languages/tools we've learned til the moment are: HTML, CSS, SASS, Grid, GULP, GITHUB, JavaScript.  
+The languages/tools we've learned til the moment are: HTML, CSS, SASS, Grid, GULP, GITHUB, JavaScript, React, Node JS, Express JS, EJS, SQLite.  
 We still have a long way to go but we are a fast learners.
 
 💞️ We are looking to collaborate on new projects in order to get to know more about the community and to keep on to practicing.
